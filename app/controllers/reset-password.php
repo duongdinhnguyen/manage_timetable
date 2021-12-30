@@ -1,2 +1,2 @@
 <?php
-require_once 'app/views/reset-password.php';
+require_once 'app/views/reset_password.php';

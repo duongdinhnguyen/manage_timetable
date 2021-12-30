@@ -9,6 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    Đây là screen reset password
 </body>
 </html>

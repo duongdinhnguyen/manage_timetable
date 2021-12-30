@@ -25,7 +25,7 @@
                     <input id="login-password" type="text" class="input-element" name="value-password">
                 </div>
                 <div class="element">
-                    <a href="http://localhost/web/manage_timetable/?router=reset-password">Reset password</a>
+                    <a href="?router=reset-password">Reset password</a>
                 </div>
                 <div class="element">
                     <button type="submit" class="btn-submit" name= "login-submit" >Đăng nhập</button>
