@@ -13,7 +13,9 @@
             <form action="" class="form" method="POST">
                 <div class="main">
                     <div class="element">
-                        <?php  echo $_SESSION['search-subject']; ?>
+                        <?php 
+                            echo $_SESSION['search-subject'];
+                        ?>
                     </div>
                     <div class="element">
                         <label for="khoa-hoc">Khóa học</label>
@@ -34,10 +36,10 @@
                     </div>
                     
                     <?php 
-                        if($dataSearch):
+                        if($dataSearch && $_SESSION['search-subject'] > 0):
                     ?>              
                             <div class="element">
-                                <label for="">STT</label>
+                                <label for="">ID</label>
                                 <label for="">Tên môn học</label>
                                 <label for="">Khóa</label>
                                 <label for="">Mô tả</label>
@@ -52,14 +54,16 @@
                                   <label for=""><?php echo $row['name']; ?></label>
                                   <label><?php echo "Năm ". (2022- $row['school_year']); ?></label>
                                   <label for=""><?php echo $row['description']; ?></label>
-                                  <button type="submit" class="btn-submit">Xóa</button>
+                                  <button type="submit" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xóa</button>
                                   <button type="submit" class="btn-submit">Sửa</button>
                               </div>  
                         <?php endforeach;
                         
                         endif;
                         ?>
-                    
+                    <div class="element">
+                        <a href="http://localhost/manage_timetable/?router=home" >Trở lại trang chủ</a>
+                    </div>
                 </div>
             </form>
         </div>
