@@ -1,5 +1,4 @@
 <?php
-// require_once './app/controllers/check.php';
 class ResetPassword{
     public function __construct(){
         $_SESSION['reset'] = "";

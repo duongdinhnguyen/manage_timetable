@@ -1,4 +1,5 @@
 <?php
+require_once './app/controllers/checkReset.php';
 require_once './app/models/admin.php';
 class ResetPasswordForm{
     public function __construct(){

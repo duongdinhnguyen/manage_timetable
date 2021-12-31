@@ -22,19 +22,16 @@
             <div class="element">
                 <table>
                     <tr>
-                    <th>Phòng học</th>
                     <th>Giáo viên</th>
                     <th>Môn học</th>
                     <th>Thời khóa biểu</th>
                     </tr>
                     <tr>
-                        <td><a href="?router=search-classroom">Tìm kiếm</a></td>
                         <td><a href="?router=search-teacher">Tìm kiếm</a> </td>
                         <td><a href="?router=search-subject">Tìm kiếm</a></td>
                         <td><a href="?router=search-schedule">Tìm kiếm</a></td>
                     </tr>
                     <tr>
-                        <td><a href="?router=add-classroom">Thêm mới</a> </td>
                         <td><a href="?router=add-teacher">Thêm mới</a> </td>
                         <td><a href="?router=add-subject">Thêm mới</a> </td>
                         <td><a href="?router=add-schedule">Thêm mới</a> </td>

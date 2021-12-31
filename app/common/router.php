@@ -14,9 +14,6 @@ class Router{
             case 'home':
                 require_once './app/controllers/home.php';
                 break;
-            case 'search-classroom':
-                require_once './app/controllers/search_classroom.php';
-                break;
             case 'search-teacher':
                 require_once './app/controllers/search_teacher.php';
                 break;
@@ -28,10 +25,6 @@ class Router{
                 require_once './app/controllers/search_schedule.php';
                 break;
             
-            case 'add-classroom':
-                require_once './app/controllers/add_classroom.php';
-                break;
-                
             case 'add-teacher':
                 require_once './app/controllers/add_teacher.php';
                 break;
