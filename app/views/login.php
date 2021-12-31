@@ -22,7 +22,7 @@
                 </div>
                 <div class="element">
                     <label for="login-password">Mật khẩu</label>
-                    <input id="login-password" type="text" class="input-element" name="value-password">
+                    <input id="login-password" type="password" class="input-element" name="value-password">
                 </div>
                 <div class="element">
                     <a href="?router=reset-password">Reset password</a>
