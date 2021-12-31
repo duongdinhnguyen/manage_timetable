@@ -1,2 +1,4 @@
 <?php
-require_once 'app/views/add_subject.php';
+require_once './app/controllers/check.php';
+
+require_once './app/views/add_subject.php';

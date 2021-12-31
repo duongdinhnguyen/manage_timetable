@@ -1,2 +1,4 @@
 <?php 
-require_once 'app/views/add_schedule_complete.php';
+require_once './app/controllers/check.php';
+
+require_once './app/views/add_schedule_complete.php';

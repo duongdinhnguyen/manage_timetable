@@ -51,4 +51,4 @@ class Login{
 
 $Login = new Login;
 
-require_once 'app/views/login.php';// Đặt view vào sau để SESSION được cập nhật
+require_once './app/views/login.php';// Đặt view vào sau để SESSION được cập nhật
