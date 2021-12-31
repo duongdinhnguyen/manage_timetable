@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 30, 2021 lúc 11:11 AM
+-- Thời gian đã tạo: Th12 31, 2021 lúc 12:43 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -42,7 +42,9 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `reset_password_token`, `updated`, `created`) VALUES
-(1, '1234', '123456', 1, 'duonqdinhnquyen', '2021-12-30 15:53:32', '2021-12-30 12:30:43');
+(1, '1234', 'e10adc3949ba59abbe56e057f20f883e', 1, 'duonqdinhnquyen', '2021-12-31 11:51:56', '2021-12-30 12:30:43'),
+(2, 'duonq', 'e10adc3949ba59abbe56e057f20f883e', 1, '', '2021-12-31 10:11:01', '2021-12-31 10:11:01'),
+(3, 'duonqdinhnquyen', '29672f6663473703e7f34877e82be388', 1, '123456', '2021-12-31 12:20:17', '2021-12-31 12:20:17');
 
 -- --------------------------------------------------------
 
@@ -77,6 +79,15 @@ CREATE TABLE `subjects` (
   `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `name`, `avatar`, `description`, `school_year`, `updated`, `created`) VALUES
+(1, 'Toán lớp 10', 'sach-giao-khoa-dai-so-lop-10.jpg', 'chương trình toán lớp 10 được chia ra làm hai phần : Đại số và Hình học', '2021', '2021-12-31 13:35:31', '2021-12-31 13:35:31'),
+(2, 'Toán lớp 8', 'sach-giao-khoa-toan-8.jpg', 'Nội dung chương trình Toán lớp 8 bao gồm:  Hằng đẳng thức, phương trình, bất phương trình, bất đẳng thức, đồ thị hàm số', '2019', '2021-12-31 13:35:31', '2021-12-31 13:35:31'),
+(3, 'Toán lớp 9', 'sach-giao-khoa-toan-lop-9.jpg', 'Nội dung chương trình Toán lớp 9 bao gồm hai phần: Đại số và Hình học và chia thành 8 chủ đề', '2020', '2021-12-31 13:35:31', '2021-12-31 13:35:31');
 
 -- --------------------------------------------------------
 
@@ -132,7 +143,7 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `schedules`
@@ -144,7 +155,7 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `teachers`
