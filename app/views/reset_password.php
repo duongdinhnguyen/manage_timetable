@@ -9,6 +9,25 @@
     <title>Document</title>
 </head>
 <body>
-    Đây là screen reset password
+    <div class="timetable">
+        <form class="form" method="POST" action="">
+            <div class="main">
+                <div class="element">
+                    <p>
+                        <?php $result = isset($_SESSION['reset']) ? $_SESSION['reset'] : ''; 
+                            echo $result;
+                        ?>
+                    </p>
+                </div>
+                <div class="element">
+                    <label for="reset-password">Người dùng</label>
+                    <input id="reset-password" type="text" class="input-element" name="reset-input">
+                </div>
+                <div class="element">
+                    <button type="submit" class="btn-submit" name="reset-password">Gửi yêu cầu reset password</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

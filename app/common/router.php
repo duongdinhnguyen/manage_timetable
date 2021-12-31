@@ -6,7 +6,10 @@ class Router{
                 require_once './app/controllers/login.php';
                 break;
             case 'reset-password':
-                require_once './app/controllers/reset-password.php';
+                require_once './app/controllers/reset_password.php';
+                break;
+            case 'reset-password-form':
+                require_once './app/controllers/reset_password_form.php';
                 break;
             case 'home':
                 require_once './app/controllers/home.php';
