@@ -26,12 +26,13 @@ class Login{
                 $user = trim($_REQUEST['value-user']);
                 $password = trim($_REQUEST['value-password']);
                 $data = $Admin->select_LoginId_and_Password();
-                if(!$this->check($data, $user, $password)){
+                $result = $this->check($data, $user, $password);
+                if($result == null){
                     $_SESSION['login']= "Sai username hoặc mật khẩu, vui lòng nhập lại !!!";
                 }
                    
                 else  {
-                    $_SESSION['login']= "Đăng nhập thành công.";
+                    $_SESSION['login']= $result;
                     header("location:http://localhost/manage_timetable/?router=home");
                     
                 }
@@ -42,10 +43,10 @@ class Login{
     public function check($data, $user, $password){
         foreach($data as $row){
             if($row['login_id']==$user && $row['password']== $password){
-                return true;
+                return $user;
             }
         }
-        return false;
+        return null;
     }
 }
 

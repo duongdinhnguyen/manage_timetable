@@ -11,8 +11,13 @@
     <div class="timetable">
         <div class="form">
             <div class="element">
-                <p>Tên login:</p>
-                <p>Thời gian login</p>
+                <p>Tên login: <?php echo $_SESSION['login'];?></p>
+                <p>Thời gian login: <?php 
+                    	
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+                echo date('d/m/Y') . " ". date("h:i");?>
+                </p>
             </div>
             <div class="element">
                 <table>
