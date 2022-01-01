@@ -56,7 +56,7 @@
                                   <label for=""><?php echo $row['description']; ?></label>
 
                                   <button type="submit" name="remove-subject" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
-                                  <button type="submit" class="btn-submit">Sửa</button>
+                                  <button type="submit" name="change-subject" class="btn-submit" value = "<?php echo $row['id'];?>">Sửa</button>
                               </div>  
                         <?php endforeach;
                         
