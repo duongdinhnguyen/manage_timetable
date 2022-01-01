@@ -15,75 +15,98 @@
         <form action="" class="form" method = "POST">
             <div class="main">
                 <div class="element">
-                    <label for="select-phankhoa">Khóa</label>
-                    <select name="" class="select-element" id="select-phankhoa">
-                        <option value="" >Khoa học máy tính</option>
-                        <option value="" >Khoa học máy tính</option>
-                    </select>
+                    <p><?php
+                        $result = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : '';
+                        echo $result;
+                    ?></p>
+                </div>
+                <div class="element">
+                    <label for="khoa-hoc">Khóa</label>
+                    <select id="khoa-hoc" class="select-element" name="khoa-hoc">
+                            <option value="" name="khoa-hoc">Chọn khóa học</option>
+                            <option value="2021" name="khoa-hoc">Năm 1</option>
+                            <option value="2020" name="khoa-hoc">Năm 2</option>
+                            <option value="2019" name="khoa-hoc">Năm 3</option>
+                            <option value="2018" name="khoa-hoc">Năm 4</option>
+                        </select>
                 </div>
                 <div class="element">
                     <label for="select-subject">Môn học</label>
-                    <select name="" class="select-element" id="select-subject">
-                        <option value="" >Khoa học máy tính</option>
-                        <option value="" >Khoa học máy tính</option>
+                    <select name="subject" class="select-element" id="select-subject">
+                        <option value="" >Chọn môn học</option>
+                        <?php 
+                            foreach($allSubject as $row): ?>
+                                <option value="<?php  echo $row['id']; ?>" name="subject"><?php echo $row['name']; ?></option>
+                            <?php endforeach;
+                        ?>
                     </select>
                 </div>
                 <div class="element">
                     <label for="select-teacher">Giáo viên</label>
-                    <select name="" class="select-element" id="select-teacher">
-                        <option value="" >Khoa học máy tính</option>
-                        <option value="" >Khoa học máy tính</option>
+                    <select name="teacher" class="select-element" id="select-teacher">
+                        <option value="" >Chọn giáo viên</option>
+                            <?php 
+                                foreach($allTeacher as $row): ?>
+                                    <option value="<?php  echo $row['id']; ?>" name="teacher"><?php echo $row['name']; ?></option>
+                                <?php endforeach;
+                            ?>
                     </select>
                 </div>
                 <div class="element">
                     <label for="select-days">Thứ</label>
-                    <select name="" class="select-element" id="select-days">
-                        <option value="" >Khoa học máy tính</option>
-                        <option value="" >Khoa học máy tính</option>
+                    <select name="day" class="select-element" id="select-days">
+                        <option value="" name="day">Chọn ngày</option>
+                        <option value="" name="day">Thứ 2</option>
+                        <option value="" name="day">Thứ 3</option>
+                        <option value="" name="day">Thứ 4</option>
+                        <option value="" name="day">Thứ 5</option>
+                        <option value="" name="day">Thứ 6</option>
+                        <option value="" name="day">Thứ 7</option>
+                        <option value="" name="day">Chủ nhật</option>
                     </select>
                 </div>
                 <div class="element">
                     <label for="list_lesson">Tiết học</label>
                     <ul id="list_lesson">
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 1</p>
+                            <input id="tiet-hoc-1" type="checkbox" name="tiet-hoc" value="1">
+                            <label for="tiet-hoc-1">Tiết 1</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 2</p>
+                            <input id="tiet-hoc-2" type="checkbox" name="tiet-hoc" value="2">
+                            <label for="tiet-hoc-2">Tiết 2</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 3</p>
+                            <input id="tiet-hoc-3" type="checkbox" name="tiet-hoc" value="3">
+                            <label for="tiet-hoc-3">Tiết 3</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 4</p>
+                            <input id="tiet-hoc-4" type="checkbox" name="tiet-hoc" value="4">
+                            <label for="tiet-hoc-4">Tiết 4</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 5</p>
+                            <input id="tiet-hoc-5" type="checkbox" name="tiet-hoc" value="5">
+                            <label for="tiet-hoc-5">Tiết 5</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 6</p>
+                            <input id="tiet-hoc-6" type="checkbox" name="tiet-hoc" value="6">
+                            <label for="tiet-hoc-6">Tiết 6</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 7</p>
+                            <input id="tiet-hoc-7" type="checkbox" name="tiet-hoc" value="7">
+                            <label for="tiet-hoc-7">Tiết 7</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 8</p>
+                            <input id="tiet-hoc-8" type="checkbox" name="tiet-hoc" value="8">
+                            <label for="tiet-hoc-8">Tiết 8</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 9</p>
+                            <input id="tiet-hoc-9" type="checkbox" name="tiet-hoc" value="9">
+                            <label for="tiet-hoc-9">Tiết 9</label>
                         </li>
                         <li class="item_lesson">
-                            <input type="checkbox" name="" id="">
-                            <p>Tiết 10</p>
+                            <input id="tiet-hoc-10" type="checkbox" name="tiet-hoc" value="10">
+                            <label for="tiet-hoc-10">Tiết 10</label>
                         </li>
                     </ul>
                 </div>
@@ -92,8 +115,8 @@
                     <textarea name="" id="description" cols="30" rows="3"></textarea>
                 </div>
                 <div class="element">
-                    <!-- <button type="submit" class="btn-submit" name= "confirm" >Xác nhận</button> -->
-                    <a href="?router=add-schedule-confirm">Xác nhận</a>
+                    <button type="submit" class="btn-submit" name= "confirm" >Xác nhận</button>
+                    <!-- <a href="?router=add-schedule-confirm">Xác nhận</a> -->
                 </div>
             </div>
         </form>
