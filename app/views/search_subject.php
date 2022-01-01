@@ -14,7 +14,7 @@
                 <div class="main">
                     <div class="element">
                         <?php 
-                            echo $_SESSION['search-subject'];
+                            echo $_SESSION['search-notification'];
                         ?>
                     </div>
                     <div class="element">
@@ -36,7 +36,7 @@
                     </div>
                     
                     <?php 
-                        if($dataSearch && $_SESSION['search-subject'] > 0):
+                        if($_SESSION['dataSearch']): // kiểm tra $_SESSION['dataSearch'] có value hay không? khác với kiểm tra isset
                     ?>              
                             <div class="element">
                                 <label for="">ID</label>
@@ -47,14 +47,15 @@
                             </div>
                             
                         <?php
-                            foreach($dataSearch as $row): 
+                            foreach($_SESSION['dataSearch'] as $row): 
                         ?>
                               <div class="element">
                                   <label for=""><?php echo $row['id']; ?></label>
                                   <label for=""><?php echo $row['name']; ?></label>
                                   <label><?php echo "Năm ". (2022- $row['school_year']); ?></label>
                                   <label for=""><?php echo $row['description']; ?></label>
-                                  <button type="submit" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xóa</button>
+
+                                  <button type="submit" name="remove-subject" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
                                   <button type="submit" class="btn-submit">Sửa</button>
                               </div>  
                         <?php endforeach;

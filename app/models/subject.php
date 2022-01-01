@@ -5,24 +5,35 @@ class Subject extends DB{
     public function searchSubject($khoa, $keyword){
         if($khoa){
             $sql = "SELECT * FROM subjects WHERE school_year='$khoa' AND name LIKE '%$keyword%'";
-
         }
         else $sql = "SELECT * FROM subjects WHERE name LIKE '%$keyword%'";
         // $_SESSION['search-subject'] =$sql;
-        return $this->__conn->query($sql);
+        $data = $this->__conn->query($sql);
+        $array=[];
+        foreach($data as $row){
+            $array = array_merge($array, [$row]);
+        }
+        return $array;
     }
 
-    // Trả về sô lượng các bản ghi
-    public function countSubject($khoa, $keyword){
-        if($khoa){
-            $sql = "SELECT COUNT(*) FROM subjects WHERE school_year='$khoa' AND name LIKE '%$keyword%'";
-        }
-        else $sql = "SELECT COUNT(*) FROM subjects WHERE name LIKE '%$keyword%'";
-        
+    // Trả về all bản ghi
+    public function searchAllSubject(){
+        $sql = "SELECT * FROM subjects";
         $data = $this->__conn->query($sql);
+
+        // vì PDO không cho phép gán data vào SESSION khi truy vấn sql
+        // nên dùng mảng để gán cho SESSION
+        $array=[];
         foreach($data as $row){
-            return $row['COUNT(*)'];
+            $array = array_merge($array, [$row]);// phương thức gộp mảng
         }
+        return $array;
+    }
+
+    // Xóa môn học
+    public function removeSubject($id){
+        $sql= "DELETE FROM subjects WHERE id='$id'";
+        $this->__conn->exec($sql);
     }
 }
 
