@@ -16,8 +16,6 @@
         <a href="?router=home" class="notification">Trở lại trang chủ</a>
         </div>
     </form>
-    <?php 
-        // xóa session
-    ?>
+    
 </body>
 </html>

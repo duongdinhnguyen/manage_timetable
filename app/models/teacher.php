@@ -35,6 +35,15 @@ class Teacher extends DB{
     //     $sql= "DELETE FROM subjects WHERE id='$id'";
     //     $this->__conn->exec($sql);
     // }
+
+     // search name teacher
+     public function searchNameTeacher($id){
+        $sql = "SELECT name FROM teachers WHERE id='$id'";
+        $data = $this->__conn->query($sql);
+        foreach($data as $row){
+            return $row['name'];
+        }
+    }
 }
 
 $Teacher = new Teacher();

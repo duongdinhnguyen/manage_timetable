@@ -18,6 +18,7 @@
                     <p><?php
                         $result = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : '';
                         echo $result;
+                        
                     ?></p>
                 </div>
                 <div class="element">
@@ -56,63 +57,63 @@
                     <label for="select-days">Thứ</label>
                     <select name="day" class="select-element" id="select-days">
                         <option value="" name="day">Chọn ngày</option>
-                        <option value="" name="day">Thứ 2</option>
-                        <option value="" name="day">Thứ 3</option>
-                        <option value="" name="day">Thứ 4</option>
-                        <option value="" name="day">Thứ 5</option>
-                        <option value="" name="day">Thứ 6</option>
-                        <option value="" name="day">Thứ 7</option>
-                        <option value="" name="day">Chủ nhật</option>
+                        <option value="Thứ 2" name="day">Thứ 2</option>
+                        <option value="Thứ 3" name="day">Thứ 3</option>
+                        <option value="Thứ 4" name="day">Thứ 4</option>
+                        <option value="Thứ 5" name="day">Thứ 5</option>
+                        <option value="Thứ 6" name="day">Thứ 6</option>
+                        <option value="Thứ 7" name="day">Thứ 7</option>
+                        <option value="Chủ nhật" name="day">Chủ nhật</option>
                     </select>
                 </div>
                 <div class="element">
                     <label for="list_lesson">Tiết học</label>
                     <ul id="list_lesson">
                         <li class="item_lesson">
-                            <input id="tiet-hoc-1" type="checkbox" name="tiet-hoc" value="1">
+                            <input id="tiet-hoc-1" type="checkbox" name="tiethoc[]" value="Tiết 1">
                             <label for="tiet-hoc-1">Tiết 1</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-2" type="checkbox" name="tiet-hoc" value="2">
+                            <input id="tiet-hoc-2" type="checkbox" name="tiethoc[]" value="Tiết 2">
                             <label for="tiet-hoc-2">Tiết 2</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-3" type="checkbox" name="tiet-hoc" value="3">
+                            <input id="tiet-hoc-3" type="checkbox" name="tiethoc[]" value="Tiết 3">
                             <label for="tiet-hoc-3">Tiết 3</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-4" type="checkbox" name="tiet-hoc" value="4">
+                            <input id="tiet-hoc-4" type="checkbox" name="tiethoc[]" value="Tiết 4">
                             <label for="tiet-hoc-4">Tiết 4</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-5" type="checkbox" name="tiet-hoc" value="5">
+                            <input id="tiet-hoc-5" type="checkbox" name="tiethoc[]" value="Tiết 5">
                             <label for="tiet-hoc-5">Tiết 5</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-6" type="checkbox" name="tiet-hoc" value="6">
+                            <input id="tiet-hoc-6" type="checkbox" name="tiethoc[]" value="Tiết 6">
                             <label for="tiet-hoc-6">Tiết 6</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-7" type="checkbox" name="tiet-hoc" value="7">
+                            <input id="tiet-hoc-7" type="checkbox" name="tiethoc[]" value="Tiết 7">
                             <label for="tiet-hoc-7">Tiết 7</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-8" type="checkbox" name="tiet-hoc" value="8">
+                            <input id="tiet-hoc-8" type="checkbox" name="tiethoc[]" value="Tiết 8">
                             <label for="tiet-hoc-8">Tiết 8</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-9" type="checkbox" name="tiet-hoc" value="9">
+                            <input id="tiet-hoc-9" type="checkbox" name="tiethoc[]" value="Tiết 9">
                             <label for="tiet-hoc-9">Tiết 9</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-10" type="checkbox" name="tiet-hoc" value="10">
+                            <input id="tiet-hoc-10" type="checkbox" name="tiethoc[]" value="Tiết 10">
                             <label for="tiet-hoc-10">Tiết 10</label>
                         </li>
                     </ul>
                 </div>
                 <div class="element">
                     <label for="description">Chú ý</label>
-                    <textarea name="" id="description" cols="30" rows="3"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="3"></textarea>
                 </div>
                 <div class="element">
                     <button type="submit" class="btn-submit" name= "confirm" >Xác nhận</button>

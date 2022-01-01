@@ -10,68 +10,45 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-        // Sử lí thông tin nhận từ create_timetable.php và hiển thị dữ liệu
-        
-        if(isset($_POST['confirm'])){
-            echo "Hello";
-        }
-    
-    ?>
-    <?php 
-        // Sử lí khi nhấn sửa hoặc đăng kí
-        if(isset($_REQUEST["confirm"])){
-
-        }
-    ?>
     <div class="timetable">
-        <form action="<?php $_PHP_SELF ?>" class="form" name="confirm">
+        <form action="" class="form" method="POST" >
             <div class="main">
             <div class="element">
                     <label for="select-phankhoa">Khoa</label>
-                    <input type="text" class="input-element" name="confirm-khoa" readonly>
+                    <input type="text" class="input-element" name="confirm-khoa" value="<?php echo "Năm ". (2022-$data[0]);?>" readonly>
                 </div>
                 <div class="element">
                     <label for="select-subject">Môn học</label>
-                    <input type="text" class="input-element" name="confirm-subject" readonly>
+                    <input type="text" class="input-element" name="confirm-subject" value="<?php echo $subjectName;?>" readonly>
                 </div>
                 <div class="element">
                     <label for="select-teacher">Giáo viên</label>
-                    <input type="text" class="input-element" name="confirm-teacher" readonly>
+                    <input type="text" class="input-element" name="confirm-teacher" value="<?php echo $teacherName;?>" readonly>
                 </div>
                 <div class="element">
                     <label for="select-days">Thứ</label>
-                    <input type="text" class="input-element" name="confirm-day" readonly>
+                    <input type="text" class="input-element" name="confirm-day" value="<?php echo $data[3];?>" readonly>
                 </div>
                 <div class="element">
                     <label for="list_lesson">Tiết học</label>
                     <ul id="list_lesson">
-                        <li class="item_lesson">
-                            <p>Tiết 1</p>
-                        </li>
-                        <li class="item_lesson">
-                            
-                            <p>Tiết 1</p>
-                        </li>
-                        <li class="item_lesson">
-                            <p>Tiết 1</p>
-                        </li>
-                        <li class="item_lesson">
-                            <p>Tiết 1</p>
-                        </li>
-                        <li class="item_lesson">
-                            <p>Tiết 1</p>
-                        </li>
-                        
+                        <?php 
+                            foreach($data[4] as $row):?>
+                                <li class="item_lesson">
+                                    <p><?php echo $row; ?></p>
+                                </li>
+                        <?php   
+                            endforeach;
+                        ?>
                     </ul>
                 </div>
                 <div class="element">
                     <label for="description">Chú ý</label>
-                    <textarea name="" id="description" cols="20" rows="3"></textarea>
+                    <textarea name="" id="description" cols="20" rows="3" readonly><?php echo $data[5]; ?></textarea>
                 </div>
                 <div class="element">
                     <a class="btn-submit" name= "change" href="?router=add-schedule">Sửa lại</a>
-                    <a class="btn-submit" name= "register" href="?router=add-schedule-complete">Đăng kí</a>
+                    <button type="submit" class="btn-submit" name="add-new-schedule">Đăng kí</button>
                 </div>
             </div>
         </form>

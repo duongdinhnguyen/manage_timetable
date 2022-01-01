@@ -35,6 +35,15 @@ class Subject extends DB{
         $sql= "DELETE FROM subjects WHERE id='$id'";
         $this->__conn->exec($sql);
     }
+
+    // search name subject
+    public function searchNameSubject($id){
+        $sql = "SELECT name FROM subjects WHERE id='$id'";
+        $data = $this->__conn->query($sql);
+        foreach($data as $row){
+            return $row['name'];
+        }
+    }
 }
 
 $Subject = new Subject();
