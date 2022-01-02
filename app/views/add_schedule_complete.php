@@ -12,7 +12,10 @@
 <body>
     <form action="" class="form">
         <div class="content">
-        <p>Bạn đã đăng kí thành công</p>
+        <?php   
+            $result= isset($_SESSION['file']) ? $_SESSION['file'] :''  ;
+            echo $result;
+        ?>
         <a href="?router=home" class="notification">Trở lại trang chủ</a>
         </div>
     </form>
