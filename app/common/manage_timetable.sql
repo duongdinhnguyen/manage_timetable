@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 02, 2022 lúc 05:19 AM
+-- Thời gian đã tạo: Th1 02, 2022 lúc 02:32 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -69,9 +69,13 @@ CREATE TABLE `schedules` (
 --
 
 INSERT INTO `schedules` (`id`, `school_year`, `subject_id`, `teacher_id`, `week_day`, `lesson`, `notes`, `updated`, `created`) VALUES
-(1, '2021', 2, 2, 'Thứ 3', 'lesson1753', 'note809333231.txt', '2022-01-02 11:10:12', '2022-01-02 11:10:12'),
-(2, '2021', 2, 2, 'Thứ 3', 'lesson1628', 'note2062002104.txt', '2022-01-02 11:13:37', '2022-01-02 11:13:37'),
-(3, '2021', 2, 2, 'Thứ 5', 'lesson6641', 'note1267824913.txt', '2022-01-02 11:14:12', '2022-01-02 11:14:12');
+(11, '2020', 1, 2, 'Thứ 4', 'l15361.txt', 'n3882.txt', '2022-01-02 17:57:37', '2022-01-02 17:57:37'),
+(12, '2020', 1, 2, 'Thứ 3', 'l61645.txt', 'n92059.txt', '2022-01-02 18:28:57', '2022-01-02 18:28:57'),
+(13, '2021', 3, 1, 'Thứ 6', 'l80396.txt', 'n70688.txt', '2022-01-02 18:29:27', '2022-01-02 18:29:27'),
+(14, '2019', 2, 2, 'Thứ 7', 'l16749.txt', 'n86285.txt', '2022-01-02 18:29:48', '2022-01-02 18:29:48'),
+(15, '2020', 3, 3, 'Chủ nhật', 'l96126.txt', 'n18370.txt', '2022-01-02 18:30:22', '2022-01-02 18:30:22'),
+(16, '2018', 1, 1, 'Thứ 3', 'l41256.txt', 'n7118.txt', '2022-01-02 18:30:50', '2022-01-02 18:30:50'),
+(17, '2020', 3, 2, 'Thứ 4', 'l82776.txt', 'n97517.txt', '2022-01-02 18:31:41', '2022-01-02 18:31:41');
 
 -- --------------------------------------------------------
 
@@ -167,7 +171,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT cho bảng `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
