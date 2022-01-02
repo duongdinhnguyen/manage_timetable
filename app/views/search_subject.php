@@ -39,11 +39,11 @@
                         if($_SESSION['dataSearch']): // kiểm tra $_SESSION['dataSearch'] có value hay không? khác với kiểm tra isset
                     ?>              
                             <div class="element">
-                                <label for="">ID</label>
-                                <label for="">Tên môn học</label>
-                                <label for="">Khóa</label>
-                                <label for="">Mô tả</label>
-                                <label for="">Action</label>
+                                <label for=""><b>ID</b></label>
+                                <label for=""><b>Tên môn học</b></label>
+                                <label for=""><b>Khóa</b></label>
+                                <label for=""><b>Mô tả</b></label>
+                                <label for=""><b>Action</b></label>
                             </div>
                             
                         <?php
@@ -55,8 +55,10 @@
                                   <label><?php echo "Năm ". (2022- $row['school_year']); ?></label>
                                   <label for=""><?php echo $row['description']; ?></label>
 
+                                  <label for="">
                                   <button type="submit" name="remove-subject" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
                                   <button type="submit" name="change-subject" class="btn-submit" value = "<?php echo $row['id'];?>">Sửa</button>
+                                  </label>
                               </div>  
                         <?php endforeach;
                         

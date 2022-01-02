@@ -70,43 +70,43 @@
                     <label for="list_lesson">Tiết học</label>
                     <ul id="list_lesson">
                         <li class="item_lesson">
-                            <input id="tiet-hoc-1" type="checkbox" name="tiethoc[]" value="Tiết 1">
+                            <input id="tiet-hoc-1" type="checkbox" name="tiethoc[]" value="1">
                             <label for="tiet-hoc-1">Tiết 1</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-2" type="checkbox" name="tiethoc[]" value="Tiết 2">
+                            <input id="tiet-hoc-2" type="checkbox" name="tiethoc[]" value="2">
                             <label for="tiet-hoc-2">Tiết 2</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-3" type="checkbox" name="tiethoc[]" value="Tiết 3">
+                            <input id="tiet-hoc-3" type="checkbox" name="tiethoc[]" value="3">
                             <label for="tiet-hoc-3">Tiết 3</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-4" type="checkbox" name="tiethoc[]" value="Tiết 4">
+                            <input id="tiet-hoc-4" type="checkbox" name="tiethoc[]" value="4">
                             <label for="tiet-hoc-4">Tiết 4</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-5" type="checkbox" name="tiethoc[]" value="Tiết 5">
+                            <input id="tiet-hoc-5" type="checkbox" name="tiethoc[]" value="5">
                             <label for="tiet-hoc-5">Tiết 5</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-6" type="checkbox" name="tiethoc[]" value="Tiết 6">
+                            <input id="tiet-hoc-6" type="checkbox" name="tiethoc[]" value="6">
                             <label for="tiet-hoc-6">Tiết 6</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-7" type="checkbox" name="tiethoc[]" value="Tiết 7">
+                            <input id="tiet-hoc-7" type="checkbox" name="tiethoc[]" value="7">
                             <label for="tiet-hoc-7">Tiết 7</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-8" type="checkbox" name="tiethoc[]" value="Tiết 8">
+                            <input id="tiet-hoc-8" type="checkbox" name="tiethoc[]" value="8">
                             <label for="tiet-hoc-8">Tiết 8</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-9" type="checkbox" name="tiethoc[]" value="Tiết 9">
+                            <input id="tiet-hoc-9" type="checkbox" name="tiethoc[]" value="9">
                             <label for="tiet-hoc-9">Tiết 9</label>
                         </li>
                         <li class="item_lesson">
-                            <input id="tiet-hoc-10" type="checkbox" name="tiethoc[]" value="Tiết 10">
+                            <input id="tiet-hoc-10" type="checkbox" name="tiethoc[]" value="10">
                             <label for="tiet-hoc-10">Tiết 10</label>
                         </li>
                     </ul>

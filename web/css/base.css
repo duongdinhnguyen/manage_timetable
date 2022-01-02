@@ -28,7 +28,7 @@
     
 }
 .main{
-    width: 600px;
+    width: 800px;
 }
 .element{
     margin: 20px 0;
@@ -37,7 +37,7 @@
     align-items: center;
 }
 .element label{
-    width: 100px;
+    width: 120px;
 }
 .select-element,
 .option-element,
@@ -55,7 +55,7 @@
 }
 #list_lesson{
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     list-style: none;
     width: 420px;
     flex-wrap: wrap;

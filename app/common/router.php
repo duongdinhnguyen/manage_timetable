@@ -46,7 +46,7 @@ class Router{
                 break;
                         
             default:
-                // require_once 'app/views/home.php';
+                // require_once './app/views/home.php';
                 break;
         }
     }

@@ -35,7 +35,7 @@
                         <?php 
                             foreach($data[4] as $row):?>
                                 <li class="item_lesson">
-                                    <p><?php echo $row; ?></p>
+                                    <p><?php echo "Tiết ".$row; ?></p>
                                 </li>
                         <?php   
                             endforeach;

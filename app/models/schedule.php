@@ -7,7 +7,56 @@ class Schedule extends DB{
         // $_SESSION['file'] = $sql;
 
         $this->__conn->exec($sql);
-        $_SESSION['file']= "Bạn đã tạo thêm thành công môn học.";
+        $_SESSION['add-schedule-complete-notifi']= "Bạn đã tạo thêm thành công thời khóa biểu.";
+    }
+
+    // Tìm kiếm trong table
+    public function searchSchedule($khoa, $subject, $teacher){
+        if($khoa !=null){
+            if($subject !=null){
+                if($teacher != null){
+                    $sql_end = "WHERE schedules.school_year='$khoa' AND schedules.subject_id='$subject' AND schedules.teacher_id='$teacher'";
+                }
+                else{
+                    $sql_end = "WHERE schedules.school_year='$khoa' AND schedules.subject_id='$subject'";
+                }
+            }
+            else{
+                if($teacher != null){
+                    $sql_end = "WHERE schedules.school_year='$khoa' AND schedules.teacher_id='$teacher'";
+                }
+                else{
+                    $sql_end = "WHERE schedules.school_year='$khoa'";
+                }
+            }
+        }
+        else{
+            if($subject !=null){
+                if($teacher != null){
+                    $sql_end = "WHERE schedules.subject_id='$subject' AND schedules.teacher_id='$teacher'";
+                }
+                else{
+                    $sql_end = "WHERE schedules.subject_id='$subject'";
+                }
+            }
+            else{
+                if($teacher != null){
+                    $sql_end = "WHERE schedules.teacher_id='$teacher'";
+                }
+                
+            }
+        }
+        // $_SESSION['search-schedule'] = $sql;
+        $sql = "SELECT schedules.id, schedules.school_year, subjects.name AS nameSubject, teachers.name AS nameTeacher, schedules.week_day, schedules.lesson 
+                FROM schedules 
+                INNER JOIN teachers ON schedules.teacher_id = teachers.id
+                INNER JOIN subjects ON schedules.subject_id = subjects.id " . $sql_end;
+        $data= $this->__conn->query($sql);
+        $array=[];
+        foreach($data as $row){
+            $array = array_merge($array, [$row]);// phương thức gộp mảng
+        }
+        return $array;
     }
 }
 

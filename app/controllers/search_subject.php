@@ -3,6 +3,7 @@ require_once './app/controllers/checkLogin.php';
 class SearchSubject{
     public function __construct(){
         $_SESSION['search-notification']='';
+        $_SESSION['dataSearch'] = null;
         // xóa và refesh lại trang
         if(isset($_REQUEST['remove-subject'])){
             require_once './app/models/subject.php';
@@ -14,11 +15,7 @@ class SearchSubject{
                 $_SESSION['dataSearch'] = $Subject->searchSubject($khoa, $keyword); // trả về mảng khi tìm kiếm 
                 $_SESSION['key-search'] = '';
             }
-            else{
-                // Không tồn tại key search thì hiển thị tất cả sau khi xóa
-                $_SESSION['dataSearch'] = $Subject->searchAllSubject(); // trả về mảng khi tìm kiếm 
-
-            }
+            
             $_SESSION['search-notification'] = "Đã xóa môn học có id = ".$_REQUEST['remove-subject'];
 
         }
@@ -41,13 +38,9 @@ class SearchSubject{
             }
 
         }
-        else {
-            // Nếu không nhấn tìm kiếm thì hiển thị tất cả
-            require_once './app/models/subject.php';
-            $_SESSION['dataSearch'] = $Subject->searchAllSubject();
-        }   
+         
         
     }
 }
 $SearchSubject = new SearchSubject();
-require_once 'app/views/search_subject.php';
+require_once './app/views/search_subject.php';
