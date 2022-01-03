@@ -13,7 +13,7 @@
         <form action="" class="form" method="POST">
             <div class="main">
                 <div class="element">
-                    <p><?php echo $_SESSION['search-schedule']; ?></p>
+                    <p class="message-notification"><?php echo $_SESSION['search-schedule']; ?></p>
                 </div>
                 <div class="element">
                     <label for="">Khóa</label>

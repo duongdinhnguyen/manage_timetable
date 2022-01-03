@@ -15,7 +15,7 @@
         <form action="" class="form" method = "POST">
             <div class="main">
                 <div class="element">
-                    <p><?php
+                    <p class="message-notification"><?php
                         $result = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : '';
                         echo $result;
                         
@@ -118,6 +118,9 @@
                 <div class="element">
                     <button type="submit" class="btn-submit" name= "confirm" >Xác nhận</button>
                     <!-- <a href="?router=add-schedule-confirm">Xác nhận</a> -->
+                </div>
+                <div class="element">
+                    <a href="?router=home">Trở về trang chủ</a>
                 </div>
             </div>
         </form>

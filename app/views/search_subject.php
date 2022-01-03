@@ -13,9 +13,11 @@
             <form action="" class="form" method="POST">
                 <div class="main">
                     <div class="element">
-                        <?php 
-                            echo $_SESSION['search-notification'];
-                        ?>
+                        <p class="message-notification">
+                            <?php 
+                                echo $_SESSION['search-notification'];
+                            ?>
+                        </p>
                     </div>
                     <div class="element">
                         <label for="khoa-hoc">Khóa học</label>

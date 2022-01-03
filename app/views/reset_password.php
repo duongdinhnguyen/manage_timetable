@@ -13,7 +13,7 @@
         <form class="form" method="POST" action="">
             <div class="main">
                 <div class="element">
-                    <p>
+                    <p class="message-notification">
                         <?php $result = isset($_SESSION['reset']) ? $_SESSION['reset'] : ''; 
                             echo $result;
                         ?>
