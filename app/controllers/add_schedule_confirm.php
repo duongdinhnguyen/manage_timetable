@@ -7,7 +7,8 @@ require_once './app/models/teacher.php';
 class AddScheduleConfirm{
     public function __construct(){
         if(isset($_REQUEST['add-new-schedule'])){
-            header('location:http://localhost/manage_timetable/?router=add-schedule-complete');
+            // header('location:http://localhost/manage_timetable/?router=add-schedule-complete');
+            header('location:'.URLROOT.'/?router=add-schedule-complete');
         }
     }
 }

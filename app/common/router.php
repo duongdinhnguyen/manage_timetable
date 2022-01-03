@@ -32,6 +32,12 @@ class Router{
             case 'add-subject':
                 require_once './app/controllers/add_subject.php';
                 break;
+            case 'add-subject-confirm':
+                require_once './app/controllers/add_subject_confirm.php';
+                break;
+            case 'add-subject-edit':
+                require_once './app/controllers/add_subject_edit.php';
+                    break;
                             
             case 'add-schedule':
                 require_once './app/controllers/add_schedule_create.php';
