@@ -1,4 +1,61 @@
 <?php
 require_once './app/controllers/checkLogin.php';
+require_once './app/common/db.php';
+		$sql = '';
+		$subjects_log = '';
+		$teachers_log = '';
 
+		$school_year = '';
+
+		$subject_id = '';
+		$teacher_id = '';
+
+
+		$subjects_log = $connect->query($sql);
+		$sql = "Select id,name From teachers ";
+		$teachers_log = $connect->query($sql);
+		function test_input($data) {
+		  $data = trim($data);
+		  $data = stripslashes($data);
+		  $data = htmlspecialchars($data);
+		  return $data;
+		}
+
+
+		if ($_SERVER["REQUEST_METHOD"] == "GET") {
+			$school_year = test_input($_GET["khoa"]);
+			$subject_id = test_input($_GET["subject_id"]);
+			$teacher_id = test_input($_GET["teacher_id"]);
+		}
+
+
+		$sql = "Select * From schedules ";
+
+		if($school_year != "" or $subject_id != "" or $teacher_id != ""){
+
+			$sql = $sql."where ";
+			if($school_year != "")
+				$sql = $sql."school_year = '$school_year' ";
+			if($subject_id != "")
+				if($school_year != "")
+					$sql = $sql."and subject_id = '$subject_id' ";
+				else
+					$sql = $sql."subject_id = '$subject_id' ";
+			if($teacher_id != "")
+				if($school_year != "" or $subject_id != "")
+					$sql = $sql."and teacher_id = '$teacher_id' ";
+				else
+					$sql = $sql."teacher_id = '$teacher_id' ";
+		}
+		$log = $connect->query($sql);
+		
+		$subjects = array();
+		while($row = $subjects_log->fetch(PDO::FETCH_ASSOC)){
+			$subjects[] = array($row["id"],$row["name"]);
+		}
+		$teachers = array();
+		while($row = $teachers_log->fetch(PDO::FETCH_ASSOC)){
+			$teachers[] = array($row["id"],$row["name"]);
+			
+		}
 require_once 'app/views/search_schedule.php';
