@@ -12,7 +12,7 @@
 <body>
 <?php
 	require_once './app/controllers/checkLogin.php';
-	
+	error_reporting(0);
 
 	
 
