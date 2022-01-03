@@ -19,7 +19,9 @@ class ResetPassword{
                 }
                 else{
                     $_SESSION['reset'] = $_REQUEST['reset-input'];
-                    header("location:http://localhost/manage_timetable/?router=reset-password-form");
+                    
+                    header('location:'.URLROOT.'/?router=reset-password-form');
+                    // header("location:http://localhost/manage_timetable/?router=reset-password-form");
                 }
             }
         }

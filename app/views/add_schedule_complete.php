@@ -13,7 +13,7 @@
     <form action="" class="form">
         <div class="content">
         <?php   
-            $result= isset($_SESSION['add-schedule-complete-notifi']) ? $_SESSION['file'] :''  ;
+            $result= isset($_SESSION['add-schedule-complete-notifi']) ? $_SESSION['add-schedule-complete-notifi'] :''  ;
             echo $result;
         ?>
         <a href="?router=home" class="notification">Trở lại trang chủ</a>

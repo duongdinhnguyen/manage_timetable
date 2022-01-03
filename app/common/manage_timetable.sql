@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 02, 2022 lúc 02:32 PM
+-- Thời gian đã tạo: Th1 03, 2022 lúc 11:53 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -69,13 +69,15 @@ CREATE TABLE `schedules` (
 --
 
 INSERT INTO `schedules` (`id`, `school_year`, `subject_id`, `teacher_id`, `week_day`, `lesson`, `notes`, `updated`, `created`) VALUES
-(11, '2020', 1, 2, 'Thứ 4', 'l15361.txt', 'n3882.txt', '2022-01-02 17:57:37', '2022-01-02 17:57:37'),
-(12, '2020', 1, 2, 'Thứ 3', 'l61645.txt', 'n92059.txt', '2022-01-02 18:28:57', '2022-01-02 18:28:57'),
-(13, '2021', 3, 1, 'Thứ 6', 'l80396.txt', 'n70688.txt', '2022-01-02 18:29:27', '2022-01-02 18:29:27'),
-(14, '2019', 2, 2, 'Thứ 7', 'l16749.txt', 'n86285.txt', '2022-01-02 18:29:48', '2022-01-02 18:29:48'),
-(15, '2020', 3, 3, 'Chủ nhật', 'l96126.txt', 'n18370.txt', '2022-01-02 18:30:22', '2022-01-02 18:30:22'),
-(16, '2018', 1, 1, 'Thứ 3', 'l41256.txt', 'n7118.txt', '2022-01-02 18:30:50', '2022-01-02 18:30:50'),
-(17, '2020', 3, 2, 'Thứ 4', 'l82776.txt', 'n97517.txt', '2022-01-02 18:31:41', '2022-01-02 18:31:41');
+(11, '2', 1, 2, 'Thứ 4', 'l15361.txt', 'n3882.txt', '2022-01-03 17:05:28', '2022-01-02 17:57:37'),
+(12, '2', 1, 2, 'Thứ 3', 'l61645.txt', 'n92059.txt', '2022-01-03 17:05:28', '2022-01-02 18:28:57'),
+(13, '1', 3, 1, 'Thứ 6', 'l80396.txt', 'n70688.txt', '2022-01-03 17:05:28', '2022-01-02 18:29:27'),
+(14, '3', 2, 2, 'Thứ 7', 'l16749.txt', 'n86285.txt', '2022-01-03 17:05:28', '2022-01-02 18:29:48'),
+(15, '2', 3, 3, 'Chủ nhật', 'l96126.txt', 'n18370.txt', '2022-01-03 17:05:00', '2022-01-02 18:30:22'),
+(16, '4', 1, 1, 'Thứ 3', 'l41256.txt', 'n7118.txt', '2022-01-03 17:03:40', '2022-01-02 18:30:50'),
+(17, '2', 3, 2, 'Thứ 4', 'l82776.txt', 'n97517.txt', '2022-01-03 17:03:32', '2022-01-02 18:31:41'),
+(18, '2', 1, 2, 'Thứ 3', 'l36304.txt', 'n94328.txt', '2022-01-03 17:00:28', '2022-01-03 17:00:28'),
+(19, '2', 1, 2, 'Thứ 3', 'l99391.txt', 'n90646.txt', '2022-01-03 17:02:36', '2022-01-03 17:02:36');
 
 -- --------------------------------------------------------
 
@@ -98,9 +100,12 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `name`, `avatar`, `description`, `school_year`, `updated`, `created`) VALUES
-(1, 'Toán lớp 10', 'sach-giao-khoa-dai-so-lop-10.jpg', 'Toán 10 gồm: Đại số và Giải tích', '2019', '2022-01-01 12:05:43', '2022-01-01 12:05:43'),
-(2, 'Toán lớp 18', 'sach-giao-khoa-toan-8.jpg', 'Toán 8 gồm: Đại số và Giải tích', '2021', '2022-01-01 12:05:43', '2022-01-01 12:05:43'),
-(3, 'Toán lớp 9', 'sach-giao-khoa-toan-lop-9.jpg', 'Nội dung chương trình Toán lớp 9 bao gồm hai phần: Đại số và Hình học và chia thành 8 chủ đề', '2020', '2021-12-31 13:35:31', '2021-12-31 13:35:31');
+(1, 'Toán lớp 10', 'sach-giao-khoa-dai-so-lop-10.jpg', 'Toán 10 gồm: Đại số và Giải tích', '3', '2022-01-03 17:06:02', '2022-01-01 12:05:43'),
+(2, 'Toán lớp 18', 'sach-giao-khoa-toan-8.jpg', 'Toán 8 gồm: Đại số và Giải tích', '1', '2022-01-03 17:06:02', '2022-01-01 12:05:43'),
+(3, 'Toán lớp 9', 'sach-giao-khoa-toan-lop-9.jpg', 'Nội dung chương trình Toán lớp 9 bao gồm hai phần: Đại số và Hình học và chia thành 8 chủ đề', '2', '2022-01-03 17:06:02', '2021-12-31 13:35:31'),
+(4, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đay là môn đại sô tuyến tính', '1', '2022-01-03 16:44:25', '2022-01-03 16:01:25'),
+(5, 'Đại số tuyến tính', 'sach-giao-khoa-toan-lop-9.jpg', 'dd', '1', '2022-01-03 17:28:25', '2022-01-03 17:01:25'),
+(6, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đây là môn đại số tuyến tính', '2021', '2022-01-03 17:41:12', '2022-01-03 17:01:12');
 
 -- --------------------------------------------------------
 
@@ -171,13 +176,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT cho bảng `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `teachers`

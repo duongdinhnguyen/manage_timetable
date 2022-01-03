@@ -10,6 +10,7 @@
 :root{
     --color-background: rgb(157, 173, 247);
     --color-border: rgb(94, 130, 228);
+    --color-error: #D8000C;
 }
 
 .timetable{
@@ -78,4 +79,7 @@
     text-decoration: none;
     color: #000;
     text-align: center;
+}
+.message-notification{
+    color: var(--color-error);
 }

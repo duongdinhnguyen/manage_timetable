@@ -13,9 +13,11 @@
             <form action="" class="form" method="POST">
                 <div class="main">
                     <div class="element">
-                        <?php 
-                            echo $_SESSION['search-notification'];
-                        ?>
+                        <p class="message-notification">
+                            <?php 
+                                echo $_SESSION['search-notification'];
+                            ?>
+                        </p>
                     </div>
                     <div class="element">
                         <label for="khoa-hoc">Khóa học</label>
@@ -65,7 +67,8 @@
                         endif;
                         ?>
                     <div class="element">
-                        <a href="http://localhost/manage_timetable/?router=home" >Trở lại trang chủ</a>
+                        <!-- <a href="http://localhost/manage_timetable/?router=home" >Trở lại trang chủ</a> -->
+                        <a href="<?= URLROOT ?>/?router=home" >Trở lại trang chủ</a>
                     </div>
                 </div>
             </form>

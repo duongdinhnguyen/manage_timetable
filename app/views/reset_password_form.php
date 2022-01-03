@@ -25,14 +25,15 @@
                     <button type="submit" class="btn-submit" name="action-reset">Reset</button>
                 </div>
                 <div class="element">
-                    <p><?php 
+                    <p class="message-notification"><?php 
                     $result = isset($_SESSION['new-password']) ? $_SESSION['new-password']: '';
                     echo $result; 
                     
                     ?></p>
                 </div>
                 <div class="element">
-                    <a href="http://localhost/manage_timetable/">Quay lại trang login</a>
+                    <!-- <a href="http://localhost/manage_timetable/">Quay lại trang login</a> -->
+                    <a href="<?= URLROOT ?>/">Quay lại trang login</a>
                 </div>
             </div>
         </form>

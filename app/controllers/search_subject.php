@@ -19,6 +19,34 @@ class SearchSubject{
             $_SESSION['search-notification'] = "Đã xóa môn học có id = ".$_REQUEST['remove-subject'];
 
         }
+        else if(isset($_REQUEST['change-subject'])){
+            // $_SESSION['id'] = $_REQUEST['search-subject'];
+            require_once './app/models/subject.php';
+            $sub = $Subject->getSubject($_REQUEST['change-subject']);
+            $khoa  = [
+                2021=>'Năm 1',
+                2020=>'Năm 2',
+                2019=>'Năm 3',
+                2018=>'Năm 4',
+
+            ];
+            // print_r($sub);
+            $data = [
+                'nam' => $khoa,
+                'id' => $sub['id'],
+                'name' => $sub['name'],
+                'khoa' => $sub['school_year'],
+                'mota' => $sub['description'],
+                'avata' => $sub['avatar'],
+                'name_err' => '',
+                'khoa_err' => '',
+                'mota_err' => '',
+                'avata_err' => ''
+            ];
+            $_SESSION['data'] = $data;
+            print_r($data);
+            header("location:".URLROOT."/?router=add-subject-edit");
+        }
         // Nếu nhấn vào button tìm kiếm
         else if(isset($_REQUEST['search-subject'])){
             $_SESSION['key-search']= '';

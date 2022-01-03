@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div class="timetable">
         <div class="form">
             <div class="main">
@@ -37,6 +38,9 @@
                     <label><a href="?router=add-teacher">Thêm mới</a> </label>
                     <label><a href="?router=add-subject">Thêm mới</a> </label>
                     <label><a href="?router=add-schedule">Thêm mới</a> </label>
+                </div>
+                <div class="element">
+                    <a href="?">Đăng xuất</a>
                 </div>
             </div>
         </div>

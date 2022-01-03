@@ -33,7 +33,8 @@ class AddScheduleCreate{
                 $lesson = $_REQUEST['tiethoc'];
                 $description = $_REQUEST['description'];
                 $_SESSION['add-schedule'] =[$khoa, $subject,  $teacher, $day , $lesson, $description];
-                header('location:http://localhost/manage_timetable/?router=add-schedule-confirm');
+                // header('location:http://localhost/manage_timetable/?router=add-schedule-confirm');
+                header('location:'.URLROOT.'/?router=add-schedule-confirm');
             }
             
             

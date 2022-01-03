@@ -15,7 +15,7 @@
         <form action="" class="form" method = "POST">
             <div class="main">
                 <div class="element">
-                    <p><?php
+                    <p class="message-notification"><?php
                         $result = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : '';
                         echo $result;
                         
@@ -25,10 +25,10 @@
                     <label for="khoa-hoc">Khóa</label>
                     <select id="khoa-hoc" class="select-element" name="khoa-hoc">
                             <option value="" name="khoa-hoc">Chọn khóa học</option>
-                            <option value="2021" name="khoa-hoc">Năm 1</option>
-                            <option value="2020" name="khoa-hoc">Năm 2</option>
-                            <option value="2019" name="khoa-hoc">Năm 3</option>
-                            <option value="2018" name="khoa-hoc">Năm 4</option>
+                            <option value="1" name="khoa-hoc">Năm 1</option>
+                            <option value="2" name="khoa-hoc">Năm 2</option>
+                            <option value="3" name="khoa-hoc">Năm 3</option>
+                            <option value="4" name="khoa-hoc">Năm 4</option>
                         </select>
                 </div>
                 <div class="element">
@@ -118,6 +118,9 @@
                 <div class="element">
                     <button type="submit" class="btn-submit" name= "confirm" >Xác nhận</button>
                     <!-- <a href="?router=add-schedule-confirm">Xác nhận</a> -->
+                </div>
+                <div class="element">
+                    <a href="?router=home">Trở về trang chủ</a>
                 </div>
             </div>
         </form>
