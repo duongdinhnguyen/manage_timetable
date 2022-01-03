@@ -19,10 +19,10 @@
                     <label for="">Khóa</label>
                     <select name="khoa" id="" class="select-element">
                         <option value="">Chọn khóa học</option>
-                        <option value="2021" name="khoa">Năm 1</option>
-                        <option value="2020" name="khoa">Năm 2</option>
-                        <option value="2019" name="khoa">Năm 3</option>
-                        <option value="2018" name="khoa">Năm 4</option>
+                        <option value="1" name="khoa">Năm 1</option>
+                        <option value="2" name="khoa">Năm 2</option>
+                        <option value="3" name="khoa">Năm 3</option>
+                        <option value="4" name="khoa">Năm 4</option>
                     </select>
                 </div>
                 <div class="element">
@@ -75,7 +75,7 @@
                 ?>
                             <div class="element">
                                 <label for=""><?php echo $row['id'] ;?></label>
-                                <label for=""><?php echo "Năm ". 2022- $row['school_year'] ;?></label>
+                                <label for=""><?php echo "Năm ". $row['school_year'] ;?></label>
                                 <label for=""><?php echo $row['nameSubject'] ;?></label>
                                 <label for=""><?php echo $row['nameTeacher'] ;?></label>
                                 <label for=""><?php echo $row['week_day'] ;?></label>
