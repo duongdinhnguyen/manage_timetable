@@ -33,8 +33,8 @@ class Login{
                    
                 else  {
                     $_SESSION['login']= $result;
-                    header("location:http://localhost/manage_timetable/?router=home");
-                    
+                    // header("location:http://localhost/manage_timetable/?router=home");
+                    header('location:'.URLROOT.'/?router=home');
                 }
             }
         }

@@ -32,7 +32,8 @@
                     ?></p>
                 </div>
                 <div class="element">
-                    <a href="http://localhost/manage_timetable/">Quay lại trang login</a>
+                    <!-- <a href="http://localhost/manage_timetable/">Quay lại trang login</a> -->
+                    <a href="<?= URLROOT ?>/">Quay lại trang login</a>
                 </div>
             </div>
         </form>

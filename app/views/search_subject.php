@@ -65,7 +65,8 @@
                         endif;
                         ?>
                     <div class="element">
-                        <a href="http://localhost/manage_timetable/?router=home" >Trở lại trang chủ</a>
+                        <!-- <a href="http://localhost/manage_timetable/?router=home" >Trở lại trang chủ</a> -->
+                        <a href="<?= URLROOT ?>/?router=home" >Trở lại trang chủ</a>
                     </div>
                 </div>
             </form>

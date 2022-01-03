@@ -29,6 +29,60 @@ class Subject extends DB{
         }
         return $array;
     }
+    public function addSubject($data){
+        // $sql= "DELETE FROM subjects WHERE id='$id'";
+        // $this->__conn->exec($sql);
+
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $created = date("Y-m-d H:m:s");
+
+        
+        $stmt = $this->__conn->prepare('insert into subjects(name,avatar,description,school_year,created) value(:fname,:favata,:fmota,:fkhoa,:fcreated)');
+        // $stmt = $this->__conn->prepare('insert into subjects(name,avata,des,year,created) value(:fname,:favata,:fmota,:fkhoa,:fcreated)');
+        $stmt->bindParam(':fname',$data['name']);
+        $stmt->bindParam(':fkhoa',$data['khoa']);
+        $stmt->bindParam(':fmota',$data['mota']);
+        $stmt->bindParam(':favata',$data['avata']);
+        $stmt->bindParam(':fcreated',$created);
+        // Execute
+        return $stmt->execute(); 
+        // if ( $add->execute() ) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+    }
+
+    public function updateSubject($data){
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $updated = date("Y-m-d H:m:s");
+
+        $stmt = $this->__conn->prepare('UPDATE subjects SET name=:name_up, avatar=:avata_up, school_year=:khoa_up, description=:mota_up, updated=:updated_up where id=:id');
+        // bindParam values
+        $stmt->bindParam(':name_up',$data['name']);
+        $stmt->bindParam(':khoa_up',$data['khoa']);
+        $stmt->bindParam(':mota_up',$data['mota']);
+        $stmt->bindParam(':avata_up',$data['avata']);
+        $stmt->bindParam(':updated_up',$updated);
+        $stmt->bindParam(':id',$data['id']);
+        // Execute
+        if( $stmt->execute() ){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function getSubject($id){
+        // $sql = "SELECT name FROM subjects WHERE id='$id'";
+        $stmt = $this->__conn->prepare("select * from subjects where id=:id");
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        // $array = [$data];
+        // $array = array_merge($array, [$data]);
+        return $data;
+    }
+    
 
     // Xóa môn học
     public function removeSubject($id){
