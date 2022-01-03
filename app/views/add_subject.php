@@ -83,9 +83,11 @@
                     <?php
                        
                         foreach($data['nam'] as $key => $value){
+                            echo $key;
+                            echo $data['khoa'];
                     ?>
                     
-                    <option value="<?php echo $key ?>" <?php if ($data['khoa'] === $key) { echo "selected";}?> ><?php echo $value ?></option>
+                    <option value="<?php echo $key ?>" <?php if ($data['khoa'] == $key) { echo "selected";}?> ><?php echo $value ?></option>
                     <?php
                     }
                     ?>
