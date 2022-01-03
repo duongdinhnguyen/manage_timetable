@@ -1,6 +1,7 @@
 <?php
 require_once './app/controllers/checkLogin.php';
 require_once './app/common/db.php';
+error_reporting(0);
 		$sql = '';
 		$subjects_log = '';
 		$teachers_log = '';
@@ -11,6 +12,7 @@ require_once './app/common/db.php';
 		$teacher_id = '';
 
 
+		$sql = "Select id,name From subjects ";
 		$subjects_log = $connect->query($sql);
 		$sql = "Select id,name From teachers ";
 		$teachers_log = $connect->query($sql);
