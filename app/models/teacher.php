@@ -1,23 +1,22 @@
 <?php
 require_once './app/common/db.php';
-class Teacher extends DB{
+class Teacher extends DB {
     // Trả về các bản ghi khi tìm kiếm giáo viên
-    // public function searchSubject($khoa, $keyword){
-    //     if($khoa){
-    //         $sql = "SELECT * FROM subjects WHERE school_year='$khoa' AND name LIKE '%$keyword%'";
-    //     }
-    //     else $sql = "SELECT * FROM subjects WHERE name LIKE '%$keyword%'";
-    //     // $_SESSION['search-subject'] =$sql;
-    //     $data = $this->__conn->query($sql);
-    //     $array=[];
-    //     foreach($data as $row){
-    //         $array = array_merge($array, [$row]);
-    //     }
-    //     return $array;
-    // }
+    public function searchTeacher($bo_mon, $keyword) {
+        if($bo_mon)
+            $sql = "SELECT * FROM teachers WHERE specialized = '$bo_mon' AND name LIKE '%$keyword%'";
+        else
+            $sql = "SELECT * FROM subjects WHERE name LIKE '%$keyword%'";
+        // $_SESSION['search-teacher'] =$sql;
+        $data = $this->__conn->query($sql);
+        $array=[];
+        foreach($data as $row)
+            $array = array_merge($array, [$row]);
+        return $array;
+    }
 
     // Trả về all bản ghi
-    public function searchAllTeacher(){
+    public function searchAllTeacher() {
         $sql = "SELECT * FROM teachers";
         $data = $this->__conn->query($sql);
 
@@ -31,10 +30,10 @@ class Teacher extends DB{
     }
 
     // Xóa giáo viên
-    // public function removeSubject($id){
-    //     $sql= "DELETE FROM subjects WHERE id='$id'";
-    //     $this->__conn->exec($sql);
-    // }
+    public function removeTeacher($id) {
+        $sql= "DELETE FROM teachers WHERE id='$id'";
+        $this->__conn->exec($sql);
+    }
 
      // search name teacher
      public function searchNameTeacher($id){
