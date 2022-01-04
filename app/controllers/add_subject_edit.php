@@ -103,11 +103,10 @@ class Edit
                     }
 
 
-                    $inserMsg = 'file upload successfully';
-                    echo "<script type='text/javascript'>alert('$inserMsg');</script>";
-                    // header("refresh:3;view.php");
+                    $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
+            
 
-                    header("location:".URLROOT."/?router=home");
+                    header("location:".URLROOT."/?router=add-subject-complete");
                         // header('location:' . URLROOT . '/Subject/add_complate');
                 }
             }
@@ -173,7 +172,8 @@ class Edit
                 require_once './app/models/subject.php';
                 $result = $Subject->updateSubject($data);
                 if ($result) {  
-                    header("Location:". URLROOT ."/?router=home");
+                    $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
+                    header("location:".URLROOT."/?router=add-subject-complete");
                 }
             }
 
