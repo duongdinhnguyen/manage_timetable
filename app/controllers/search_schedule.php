@@ -17,7 +17,12 @@ error_reporting(0);
 		$subjects_log = $DB->__conn->query($sql);
 		$sql = "Select id,name From teachers ";
 		$teachers_log = $DB->__conn->query($sql);
-	
+		function test_input($data) {
+		  $data = trim($data);
+		  $data = stripslashes($data);
+		  $data = htmlspecialchars($data);
+		  return $data;
+		}
 
 
 		if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -30,7 +35,7 @@ error_reporting(0);
 		}
 		if($schedule_id != ''){
 			$sql = "delete from schedules where id = ".$schedule_id;
-			$connect->query($sql);
+			$DB->__conn->query($sql);
 		}
 		$sql = "Select * From schedules ";
 
@@ -64,13 +69,4 @@ error_reporting(0);
 			$teachers[] = array($row["id"],$row["name"]);
 			
 		}
-
-	//
-	function test_input($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return $data;
-		  }
-
 require_once 'app/views/search_schedule.php';
