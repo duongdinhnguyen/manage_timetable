@@ -19,7 +19,6 @@ class Teacher extends DB {
     public function searchAllTeacher() {
         $sql = "SELECT * FROM teachers";
         $data = $this->__conn->query($sql);
-
         // vì PDO không cho phép gán data vào SESSION khi truy vấn sql
         // nên dùng mảng để gán cho SESSION
         $array=[];
@@ -35,13 +34,12 @@ class Teacher extends DB {
     }
 
      // search name teacher
-     public function searchNameTeacher($id){
+     public function searchNameTeacher($id) {
         $sql = "SELECT name FROM teachers WHERE id='$id'";
         $data = $this->__conn->query($sql);
-        foreach($data as $row){
+        foreach($data as $row)
             return $row['name'];
-        }
-    }
+     }
 }
 
 $Teacher = new Teacher();
