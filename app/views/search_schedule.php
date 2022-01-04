@@ -92,8 +92,8 @@
 							echo "<td>"; echo$row["lesson"]; echo"</td>";
 							echo"<td>";
 							echo"<form method='post'>";
-							echo'<button class="btn-submit" type="submit" name="remove-subject" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
-							echo'<button class="btn-submit" type="submit" name="change-subject" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</button>";
+							echo'<button class="btn-submit btn-remove" type="submit" name="remove-subject" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
+							echo'<button class="btn-submit btn-change" type="submit" name="change-subject" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</button>";
 							echo"</form>";
 							echo"</td>";
 						echo "</tr>";

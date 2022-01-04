@@ -23,6 +23,7 @@ html{
     --background-color-success:#DFF2BF;
     --color-text:#fff;
     --background-color-info2:#000;
+    --color-warn: #9F6000;
 }
 
 .timetable{
@@ -100,6 +101,15 @@ html{
     text-align: center;
     box-shadow: 0 0 2px var(--color-info);
 }
+
+.btn-remove{
+    color: var(--color-text);
+    background-color: var(--color-error);
+}
+.btn-change{
+    color: var(--color-text);
+    background-color: var(--color-warn);
+}
 .btn-submit:hover{
     cursor: pointer;
     color: var(--color-text);
@@ -108,7 +118,7 @@ html{
 
 th,td{
     text-align: center;
-    min-width:120px;
+    min-width: 120px;
 }
 .message-error{
     color: var(--color-error);

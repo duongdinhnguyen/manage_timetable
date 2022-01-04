@@ -70,8 +70,8 @@
                                     <td for=""><?php echo $row['description']; ?></td>
 
                                     <td for="">
-                                    <button type="submit" name="remove-subject" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
-                                    <button type="submit" name="change-subject" class="btn-submit" value = "<?php echo $row['id'];?>">Sửa</button>
+                                    <button type="submit" name="remove-subject" class="btn-submit btn-remove" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
+                                    <button type="submit" name="change-subject" class="btn-submit btn-change" value = "<?php echo $row['id'];?>">Sửa</button>
                                     </td>
                                 </tr>
                               
