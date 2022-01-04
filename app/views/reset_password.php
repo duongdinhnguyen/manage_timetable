@@ -13,7 +13,7 @@
         <form class="form" method="POST" action="">
             <div class="main">
                 <div class="element">
-                    <p class="message-notification">
+                    <p class="message-error">
                         <?php $result = isset($_SESSION['reset']) ? $_SESSION['reset'] : ''; 
                             echo $result;
                         ?>
@@ -25,6 +25,9 @@
                 </div>
                 <div class="element">
                     <button type="submit" class="btn-submit" name="reset-password">Gửi yêu cầu reset password</button>
+                </div>
+                <div class="element">
+                    <a href="?">Quay lại trang login</a>
                 </div>
             </div>
         </form>

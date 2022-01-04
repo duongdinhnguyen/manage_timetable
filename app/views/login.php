@@ -14,7 +14,7 @@
         <form class="form" action="" method="POST">
             <div class="main">
                 <div class="element">
-                    <p class="message-notification"><?php echo $_SESSION["login"]; ?></p>
+                    <p class="message-error"><?php echo $_SESSION["login"]; ?></p>
                 </div>
                 <div class="element">
                     <label for="login-user">Tên đăng nhập</label>

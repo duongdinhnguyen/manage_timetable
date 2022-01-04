@@ -22,7 +22,7 @@ class SearchSchedule{
                     $_SESSION['search-schedule'] = "Không tìm thấy thời khóa biểu nào";
                 } 
                 else {
-                    $_SESSION['search-schedule'] = "Tìm thấy " .count($_SESSION['data-search-schedule']) . " thời khóa biểu";
+                    $_SESSION['search-schedule'] = count($_SESSION['data-search-schedule']);
 
                 }
 

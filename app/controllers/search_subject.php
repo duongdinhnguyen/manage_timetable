@@ -8,6 +8,7 @@ class SearchSubject{
         if(isset($_REQUEST['remove-subject'])){
             require_once './app/models/subject.php';
             $Subject->removeSubject($_REQUEST['remove-subject']);
+            $this->delete_files(AVATA.'subjects/'.$_REQUEST['remove-subject']);
             if(isset($_SESSION['key-search'])  && $_SESSION['key-search'] != ''){
                 // Nếu tồn tại key-search thì tìm kiếm lại key search sau khi xóa
                 $khoa = $_SESSION['key-search'][0];
@@ -61,13 +62,31 @@ class SearchSubject{
                 $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
                 require_once './app/models/subject.php';
                 $_SESSION['dataSearch'] = $Subject->searchSubject($khoa, $keyword); // trả về mảng khi tìm kiếm
-                $_SESSION['search-notification'] = "Tìm thấy " .count($_SESSION['dataSearch']) ." môn học";
+                $_SESSION['search-notification'] = count($_SESSION['dataSearch']);
                 
             }
 
         }
          
         
+    }
+
+    public function delete_files($target) {
+
+        if (is_dir($target)) {
+            $files = glob( $target . '*', GLOB_MARK ); //GLOB_MARK adds a slash to directories returned
+    
+            foreach( $files as $file )
+            {
+                $this->delete_files( $file );
+            }
+            if (file_exists($target)){
+                rmdir( $target );
+            }
+        } elseif (is_file($target)) {
+            unlink( $target );
+        }
+
     }
 }
 $SearchSubject = new SearchSubject();

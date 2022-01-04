@@ -1,6 +1,7 @@
 <?php
 require_once './app/controllers/checkLogin.php';
 require_once './app/common/db.php';
+$DB = new DB();
 error_reporting(0);
 		$sql = '';
 		$subjects_log = '';
@@ -13,15 +14,10 @@ error_reporting(0);
 
 
 		$sql = "Select id,name From subjects ";
-		$subjects_log = $connect->query($sql);
+		$subjects_log = $DB->__conn->query($sql);
 		$sql = "Select id,name From teachers ";
-		$teachers_log = $connect->query($sql);
-		function test_input($data) {
-		  $data = trim($data);
-		  $data = stripslashes($data);
-		  $data = htmlspecialchars($data);
-		  return $data;
-		}
+		$teachers_log = $DB->__conn->query($sql);
+	
 
 
 		if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -54,7 +50,7 @@ error_reporting(0);
 				else
 					$sql = $sql."teacher_id = '$teacher_id' ";
 		}
-		$log = $connect->query($sql);
+		$log = $DB->__conn->query($sql);
 		
 		
 		
@@ -68,4 +64,13 @@ error_reporting(0);
 			$teachers[] = array($row["id"],$row["name"]);
 			
 		}
+
+	//
+	function test_input($data) {
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		  }
+
 require_once 'app/views/search_schedule.php';

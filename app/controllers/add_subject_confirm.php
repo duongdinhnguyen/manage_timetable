@@ -59,11 +59,10 @@ class Confirm
                     }
 
 
-                    $inserMsg = 'file upload successfully';
-                    echo "<script type='text/javascript'>alert('$inserMsg');</script>";
+                    $_SESSION['Msg-add-subject'] = 'Bạn đã đăng kí thành công';
                     // header("refresh:3;view.php");
 
-                    header("location:".URLROOT."/?router=home");
+                    header("location:".URLROOT."/?router=add-subject-complete");
 
                     // header("Location:". URLROOT ."/Subject/add_complate");
                         // header('location:' . URLROOT . '/Subject/add_complate');

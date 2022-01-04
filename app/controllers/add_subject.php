@@ -98,7 +98,8 @@ class Subjects
                     $data['avata_err'] = "upload jpg jpeg png & gif formate ... check file";
                 }
 
-
+            } else if (isset($_POST['cancel'])) {
+                header("location:".URLROOT."/?router=home");
 
             } else {
                 // Init data

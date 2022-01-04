@@ -15,7 +15,7 @@
         <form action="" class="form" method = "POST">
             <div class="main">
                 <div class="element">
-                    <p class="message-notification"><?php
+                    <p class="message-error"><?php
                         $result = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : '';
                         echo $result;
                         

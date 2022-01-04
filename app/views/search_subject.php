@@ -12,13 +12,7 @@
         <div class="timetable">
             <form action="" class="form" method="POST">
                 <div class="main">
-                    <div class="element">
-                        <p class="message-notification">
-                            <?php 
-                                echo $_SESSION['search-notification'];
-                            ?>
-                        </p>
-                    </div>
+                    
                     <div class="element">
                         <label for="khoa-hoc">Khóa học</label>
                         <select id="khoa-hoc" class="select-element" name="khoa-hoc">
@@ -36,34 +30,54 @@
                     <div class="element">
                         <button type="submit" class="btn-submit" name="search-subject">Tìm kiếm</button>
                     </div>
-                    
+                    <div class="element">
+                        <?php 
+                            if(!intval($_SESSION['search-notification'])): ?>
+                                <p class="message-error"><?php echo $_SESSION['search-notification']; ?></p>
+
+                        <?php
+                            else:
+                        ?>
+                                <p class="message-success"><?php echo "Tìm thấy " .$_SESSION['search-notification'] ." môn học"; ?></p>
+
+                        <?php
+                            endif;
+                        ?>
+                        
+                    </div>
                     <?php 
                         if($_SESSION['dataSearch']): // kiểm tra $_SESSION['dataSearch'] có value hay không? khác với kiểm tra isset
-                    ?>              
-                            <div class="element">
-                                <label for=""><b>ID</b></label>
-                                <label for=""><b>Tên môn học</b></label>
-                                <label for=""><b>Khóa</b></label>
-                                <label for=""><b>Mô tả</b></label>
-                                <label for=""><b>Action</b></label>
-                            </div>
+                    ?>       
+                                                        
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên môn học</th>
+                                    <th>Khóa</th>
+                                    <th>Mô tả</th>
+                                    <th>Action</th>
+                                </tr>
+                            
+                           
                             
                         <?php
                             foreach($_SESSION['dataSearch'] as $row): 
                         ?>
-                              <div class="element">
-                                  <label for=""><?php echo $row['id']; ?></label>
-                                  <label for=""><?php echo $row['name']; ?></label>
-                                  <label><?php echo "Năm ". (2022- $row['school_year']); ?></label>
-                                  <label for=""><?php echo $row['description']; ?></label>
+                                <tr>
+                                    <td for=""><?php echo $row['id']; ?></td>
+                                    <td for=""><?php echo $row['name']; ?></td>
+                                    <td><?php echo "Năm ". (2022- $row['school_year']); ?></td>
+                                    <td for=""><?php echo $row['description']; ?></td>
 
-                                  <label for="">
-                                  <button type="submit" name="remove-subject" class="btn-submit" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
-                                  <button type="submit" name="change-subject" class="btn-submit" value = "<?php echo $row['id'];?>">Sửa</button>
-                                  </label>
-                              </div>  
-                        <?php endforeach;
-                        
+                                    <td for="">
+                                    <button type="submit" name="remove-subject" class="btn-submit btn-remove" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
+                                    <button type="submit" name="change-subject" class="btn-submit btn-change" value = "<?php echo $row['id'];?>">Sửa</button>
+                                    </td>
+                                </tr>
+                              
+                        <?php endforeach; ?>
+                            </table> 
+                        <?php
                         endif;
                         ?>
                     <div class="element">

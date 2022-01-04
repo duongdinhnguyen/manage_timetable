@@ -103,14 +103,15 @@ class Edit
                     }
 
 
-                    $inserMsg = 'file upload successfully';
-                    echo "<script type='text/javascript'>alert('$inserMsg');</script>";
-                    // header("refresh:3;view.php");
+                    $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
+            
 
-                    header("location:".URLROOT."/?router=home");
+                    header("location:".URLROOT."/?router=add-subject-complete");
                         // header('location:' . URLROOT . '/Subject/add_complate');
                 }
             }
+        } else if (isset($_POST['cancel'])) {
+            header("location:".URLROOT."/?router=add-subject-confirm");
 
         }else{
             // $sub = $_SESSION['data'];
@@ -173,13 +174,16 @@ class Edit
                 require_once './app/models/subject.php';
                 $result = $Subject->updateSubject($data);
                 if ($result) {  
-                    header("Location:". URLROOT ."/?router=home");
+                    $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
+                    header("location:".URLROOT."/?router=add-subject-complete");
                 }
             }
 
+        } else if (isset($_POST['cancel'])) {
+            header("location:".URLROOT."/?router=home");
+        } else{
+            require_once './app/views/add_subject.php';
         }
-
-        require_once './app/views/add_subject.php';
         
 
        

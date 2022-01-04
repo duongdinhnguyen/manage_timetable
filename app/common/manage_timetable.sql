@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 03, 2022 lúc 11:53 AM
+-- Thời gian đã tạo: Th1 04, 2022 lúc 05:15 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -77,7 +77,8 @@ INSERT INTO `schedules` (`id`, `school_year`, `subject_id`, `teacher_id`, `week_
 (16, '4', 1, 1, 'Thứ 3', 'l41256.txt', 'n7118.txt', '2022-01-03 17:03:40', '2022-01-02 18:30:50'),
 (17, '2', 3, 2, 'Thứ 4', 'l82776.txt', 'n97517.txt', '2022-01-03 17:03:32', '2022-01-02 18:31:41'),
 (18, '2', 1, 2, 'Thứ 3', 'l36304.txt', 'n94328.txt', '2022-01-03 17:00:28', '2022-01-03 17:00:28'),
-(19, '2', 1, 2, 'Thứ 3', 'l99391.txt', 'n90646.txt', '2022-01-03 17:02:36', '2022-01-03 17:02:36');
+(19, '2', 1, 2, 'Thứ 3', 'l99391.txt', 'n90646.txt', '2022-01-03 17:02:36', '2022-01-03 17:02:36'),
+(20, '2', 2, 1, 'Thứ 3', 'l90539.txt', 'n53046.txt', '2022-01-03 18:06:17', '2022-01-03 18:06:17');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,8 @@ INSERT INTO `subjects` (`id`, `name`, `avatar`, `description`, `school_year`, `u
 (3, 'Toán lớp 9', 'sach-giao-khoa-toan-lop-9.jpg', 'Nội dung chương trình Toán lớp 9 bao gồm hai phần: Đại số và Hình học và chia thành 8 chủ đề', '2', '2022-01-03 17:06:02', '2021-12-31 13:35:31'),
 (4, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đay là môn đại sô tuyến tính', '1', '2022-01-03 16:44:25', '2022-01-03 16:01:25'),
 (5, 'Đại số tuyến tính', 'sach-giao-khoa-toan-lop-9.jpg', 'dd', '1', '2022-01-03 17:28:25', '2022-01-03 17:01:25'),
-(6, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đây là môn đại số tuyến tính', '2021', '2022-01-03 17:41:12', '2022-01-03 17:01:12');
+(6, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đây là môn đại số tuyến tính', '2021', '2022-01-03 17:41:12', '2022-01-03 17:01:12'),
+(7, 'Toán 9', 'sach-giao-khoa-toan-lop-9.jpg', 'đây là toán lớp 9', '2020', '2022-01-04 09:26:14', '2022-01-04 09:01:14');
 
 -- --------------------------------------------------------
 
@@ -176,13 +178,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT cho bảng `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `teachers`
