@@ -13,10 +13,10 @@
         <form action="" class="form" method="POST">
             <div class="main">
                 <div class="element">
-                    <label>Tên người dùng</label>
-                    <label>Mật khẩu mới</label>
-                    <label>Reset Password Token</label>
-                    <label>Action</label>
+                    <b style="min-width:120px;text-align:center;">Tên người dùng</b>
+                    <b style="min-width:120px;text-align:center;">Mật khẩu mới</b>
+                    <b style="min-width:120px;text-align:center;">Reset Password Token</b>
+                    <b style="min-width:120px;text-align:center;">Action</label>
                 </div>
                 <div class="element">
                     <p><?php echo $_SESSION['reset'];?></p>
