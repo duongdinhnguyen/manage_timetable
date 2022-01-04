@@ -110,6 +110,8 @@ class Edit
                         // header('location:' . URLROOT . '/Subject/add_complate');
                 }
             }
+        } else if (isset($_POST['cancel'])) {
+            header("location:".URLROOT."/?router=add-subject-confirm");
 
         }else{
             // $sub = $_SESSION['data'];
@@ -177,9 +179,11 @@ class Edit
                 }
             }
 
+        } else if (isset($_POST['cancel'])) {
+            header("location:".URLROOT."/?router=home");
+        } else{
+            require_once './app/views/add_subject.php';
         }
-
-        require_once './app/views/add_subject.php';
         
 
        

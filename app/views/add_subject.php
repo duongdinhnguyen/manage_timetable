@@ -123,7 +123,7 @@
                         
                     </div>
                     <div class="preview">
-                        <p class="from-from__group-p">No files currently selected for upload</p>
+                        <p class="from-from__group-p"><?= $data['avata'] ?></p>
                         <label class="from-from__group-label" for="txt_file">browser</label>
                     </div>
                 </div>
@@ -131,7 +131,8 @@
             </div>
             <div class="from-from__group from-from__group--center">
                 <input type="submit" name="submit" class="from-from__btn from-from__submit" value="xac nhan">
-                <a href="?router=home" class="from-from__btn from-from__link">cancel</a>
+                <!-- <a href="?router=home" class="from-from__btn from-from__link">cancel</a> -->
+                <input type="submit" name="cancel" class="from-from__btn from-from__link" value="cancel">
             </div>
             </div>
         </form>
