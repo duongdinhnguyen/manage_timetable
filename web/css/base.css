@@ -42,7 +42,7 @@ html{
     
 }
 .main{
-    width: 800px;
+    width: 900px;
 }
 .element{
     margin: 20px 0;
@@ -104,6 +104,11 @@ html{
     cursor: pointer;
     color: var(--color-text);
     background-color: var(--background-color-info2);
+}
+
+th,td{
+    text-align: center;
+    min-width:120px;
 }
 .message-error{
     color: var(--color-error);

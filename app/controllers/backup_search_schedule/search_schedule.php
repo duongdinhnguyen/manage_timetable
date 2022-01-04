@@ -34,4 +34,4 @@ $SearchSchedule = new SearchSchedule();
 $allSubject = $Subject->searchAllSubject();
 $allTeacher = $Teacher->searchAllTeacher();
 
-require_once './app/views/backup_search_schedule/search_schedule.php';
+require_once './app/views/search_schedule.php';
