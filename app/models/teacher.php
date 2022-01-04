@@ -6,7 +6,7 @@ class Teacher extends DB {
         if($bo_mon)
             $sql = "SELECT * FROM teachers WHERE specialized = '$bo_mon' AND name LIKE '%$keyword%'";
         else
-            $sql = "SELECT * FROM subjects WHERE name LIKE '%$keyword%'";
+            $sql = "SELECT * FROM teachers WHERE name LIKE '%$keyword%'";
         // $_SESSION['search-teacher'] =$sql;
         $data = $this->__conn->query($sql);
         $array=[];
