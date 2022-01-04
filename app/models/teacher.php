@@ -23,9 +23,8 @@ class Teacher extends DB {
         // vì PDO không cho phép gán data vào SESSION khi truy vấn sql
         // nên dùng mảng để gán cho SESSION
         $array=[];
-        foreach($data as $row){
+        foreach($data as $row)
             $array = array_merge($array, [$row]);// phương thức gộp mảng
-        }
         return $array;
     }
 
