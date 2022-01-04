@@ -29,8 +29,13 @@ error_reporting(0);
 			$subject_id = test_input($_GET["subject_id"]);
 			$teacher_id = test_input($_GET["teacher_id"]);
 		}
-
-
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			$schedule_id = test_input($_POST["remove-schedule"]);
+		}
+		if($schedule_id != ''){
+			$sql = "delete from schedules where id = ".$schedule_id;
+			$connect->query($sql);
+		}
 		$sql = "Select * From schedules ";
 
 		if($school_year != "" or $subject_id != "" or $teacher_id != ""){
@@ -50,6 +55,9 @@ error_reporting(0);
 					$sql = $sql."teacher_id = '$teacher_id' ";
 		}
 		$log = $connect->query($sql);
+		
+		
+		
 		
 		$subjects = array();
 		while($row = $subjects_log->fetch(PDO::FETCH_ASSOC)){

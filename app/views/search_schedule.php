@@ -28,10 +28,10 @@
 				<label>Khóa</label>
 				<select class="select-element" name="khoa" id="khoa">
 					<option hidden value="" selected="selected"> </option>
-					<option value="2021">Năm 1</option>
-					<option value="2020">Năm 2</option>
-					<option value="2019">Năm 3</option>
-					<option value="2018">Năm 4</option>
+					<option value="1">Năm 1</option>
+					<option value="2">Năm 2</option>
+					<option value="3">Năm 3</option>
+					<option value="4">Năm 4</option>
 				</select>
 				</div>
 				
@@ -87,9 +87,9 @@
 						echo "<td>"; echo$row["week_day"]; echo"</td>";
 						echo "<td>"; echo$row["lesson"]; echo"</td>";
 						echo"<td>";
-						echo"<form method='post'>";
-						echo'<button class="btn-submit" type="submit" name="remove-subject" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
-						echo'<button class="btn-submit" type="submit" name="change-subject" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</button>";
+						echo"<form method='post' action='?router=search-schedule'>";
+						echo'<button class="btn-submit" type="submit" name="remove-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
+						echo'<button class="btn-submit" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</button>";
 						echo"</form>";
 						echo"</td>";
 					echo "</tr>";
