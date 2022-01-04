@@ -47,8 +47,11 @@
                     <textarea name="" id="description" cols="20" rows="3" readonly><?php echo $data[5]; ?></textarea>
                 </div>
                 <div class="element">
-                    <a class="btn-submit" name= "change" href="?router=add-schedule">Sửa lại</a>
+                    <a class="btn-submit btn-change" name= "change" href="?router=add-schedule">Sửa lại</a>
                     <button type="submit" class="btn-submit" name="add-new-schedule">Đăng kí</button>
+                </div>
+                <div class="element">
+                    <a href="?router=home">Trở về trang chủ</a>
                 </div>
             </div>
         </form>

@@ -24,6 +24,7 @@ html{
     --color-text:#fff;
     --background-color-info2:#000;
     --color-warn: #9F6000;
+    --background-color-warn: #FEEFB3;
 }
 
 .timetable{
@@ -103,12 +104,10 @@ html{
 }
 
 .btn-remove{
-    color: var(--color-text);
-    background-color: var(--color-error);
+    background-color: var(--background-color-error);
 }
 .btn-change{
-    color: var(--color-text);
-    background-color: var(--color-warn);
+    background-color: var(--background-color-warn);
 }
 .btn-submit:hover{
     cursor: pointer;
