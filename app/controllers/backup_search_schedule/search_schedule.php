@@ -22,7 +22,7 @@ class SearchSchedule{
                     $_SESSION['search-schedule'] = "Không tìm thấy thời khóa biểu nào";
                 } 
                 else {
-                    $_SESSION['search-schedule'] = "Tìm thấy " .count($_SESSION['data-search-schedule']) . " thời khóa biểu";
+                    $_SESSION['search-schedule'] = count($_SESSION['data-search-schedule']);
 
                 }
 
@@ -34,4 +34,4 @@ $SearchSchedule = new SearchSchedule();
 $allSubject = $Subject->searchAllSubject();
 $allTeacher = $Teacher->searchAllTeacher();
 
-require_once './app/views/search_schedule.php';
+require_once './app/views/backup_search_schedule/search_schedule.php';

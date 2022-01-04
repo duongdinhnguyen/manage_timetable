@@ -22,7 +22,7 @@ class Router{
                 break;
             
             case 'search-schedule':
-                require_once './app/controllers/search_schedule.php';
+                require_once './app/controllers/backup_search_schedule/search_schedule.php';
                 break;
             
             case 'add-teacher':

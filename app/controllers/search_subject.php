@@ -61,7 +61,7 @@ class SearchSubject{
                 $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
                 require_once './app/models/subject.php';
                 $_SESSION['dataSearch'] = $Subject->searchSubject($khoa, $keyword); // trả về mảng khi tìm kiếm
-                $_SESSION['search-notification'] = "Tìm thấy " .count($_SESSION['dataSearch']) ." môn học";
+                $_SESSION['search-notification'] = count($_SESSION['dataSearch']);
                 
             }
 

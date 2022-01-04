@@ -13,11 +13,19 @@
             <form action="" class="form" method="POST">
                 <div class="main">
                     <div class="element">
-                        <p class="message-notification">
-                            <?php 
-                                echo $_SESSION['search-notification'];
-                            ?>
-                        </p>
+                        <?php 
+                            if(!intval($_SESSION['search-notification'])): ?>
+                                <p class="message-error"><?php echo $_SESSION['search-notification']; ?></p>
+
+                        <?php
+                            else:
+                        ?>
+                                <p class="message-success"><?php echo "Tìm thấy " .$_SESSION['search-notification'] ." môn học"; ?></p>
+
+                        <?php
+                            endif;
+                        ?>
+                        
                     </div>
                     <div class="element">
                         <label for="khoa-hoc">Khóa học</label>

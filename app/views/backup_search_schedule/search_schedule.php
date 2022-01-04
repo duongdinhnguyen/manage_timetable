@@ -13,7 +13,18 @@
         <form action="" class="form" method="POST">
             <div class="main">
                 <div class="element">
-                    <p class="message-notification"><?php echo $_SESSION['search-schedule']; ?></p>
+                    <?php 
+                        if(!intval($_SESSION['search-schedule'])): ?>
+                            <p class="message-error"><?php echo $_SESSION['search-schedule']; ?></p>
+
+                    <?php
+                        else:
+                    ?>
+                            <p class="message-success"><?php echo "Tìm thấy " .$_SESSION['search-schedule'] ." thời khóa biểu"; ?></p>
+
+                    <?php
+                        endif;
+                    ?>
                 </div>
                 <div class="element">
                     <label for="">Khóa</label>

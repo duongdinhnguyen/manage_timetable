@@ -25,9 +25,9 @@
                     <button type="submit" class="btn-submit" name="action-reset">Reset</button>
                 </div>
                 <div class="element">
-                    <p class="message-notification"><?php 
+                    <p class="message-error"><?php 
                     $result = isset($_SESSION['new-password']) ? $_SESSION['new-password']: '';
-                    echo $result; 
+                        echo $result; 
                     
                     ?></p>
                 </div>
