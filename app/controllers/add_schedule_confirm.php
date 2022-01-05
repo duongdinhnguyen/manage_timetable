@@ -1,6 +1,5 @@
 <?php 
 require_once './app/controllers/checkLogin.php';
-$data = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : [];
 require_once './app/models/subject.php';
 require_once './app/models/teacher.php';
 
@@ -12,6 +11,8 @@ class AddScheduleConfirm{
         }
     }
 }
+$data = isset($_SESSION['add-schedule-data']) ? $_SESSION['add-schedule-data'] : [];
+
 
 $AddScheduleConfirm = new AddScheduleConfirm();
 

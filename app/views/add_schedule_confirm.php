@@ -15,7 +15,7 @@
             <div class="main">
             <div class="element">
                     <label for="select-phankhoa">Khoa</label>
-                    <input type="text" class="input-element" name="confirm-khoa" value="<?php echo "Năm ". (2022-$data[0]);?>" readonly>
+                    <input type="text" class="input-element" name="confirm-khoa" value="<?php echo "Năm ". $data[0];?>" readonly>
                 </div>
                 <div class="element">
                     <label for="select-subject">Môn học</label>

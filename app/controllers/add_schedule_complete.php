@@ -4,7 +4,11 @@ require_once './app/controllers/checkLogin.php';
 class AddScheduleComplete{
     public function __construct(){
         $_SESSION['add-schedule-complete-notifi'] = "";
-        $data = isset($_SESSION['add-schedule']) ? $_SESSION['add-schedule'] : [];
+        $data = isset($_SESSION['add-schedule-data']) ? $_SESSION['add-schedule-data'] : [];
+        $_SESSION['add-schedule-data'] =['','','','',[],''];
+        // Sau khi lấy data để xử lý insert vào database thì trả 
+        //$_SESSION['add-schedule-data'] = trống để ko hiển thị lại datainput khi vào lại screen add-schedule sau khi insert xong
+        
         $data[4] = $this-> createLessonFile($data[4]);// trả về tên file (tạo và ghi) tiết học 
         $data[5] = $this-> createNoteFile($data[5]); // trả về tên file (tạo và ghi) note
         // $_SESSION['add-schedule-complete-notifi'] = $data[4] ."   " .$data[5];
