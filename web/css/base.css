@@ -128,3 +128,32 @@ th,td{
     color: var(--color-success);
 }
 
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+  
+td, th {
+    border: 1px solid #0c0b0b;
+    padding: 4px;
+    
+}
+.btn-search{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: white;
+    border:2px solid #19528b;
+    background-color: rgb(57, 100, 194);
+    border-radius: 8px;
+    width: 100px; 
+    height: 30px; 
+}
+.btn-update-remove {
+    width:50px;
+    height: 25px;
+    color: white;
+    border:1px solid blue;
+    background-color: rgb(147, 183, 212);
+}

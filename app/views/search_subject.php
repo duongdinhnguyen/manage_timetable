@@ -10,7 +10,7 @@
 </head>
 <body>
         <div class="timetable">
-            <form action="" class="form" method="POST">
+            <form action="" class="form" method="post">
                 <div class="main">
                     
                     <div class="element">
@@ -28,17 +28,17 @@
                         <input type="text" id="tu-khoa" class="input-element" name="keyword">
                     </div>
                     <div class="element">
-                        <button type="submit" class="btn-submit" name="search-subject">Tìm kiếm</button>
+                        <button type="submit" class="btn-search" name="search-subject">Tìm kiếm</button>
                     </div>
-                    <div class="element">
+                    <div>
                         <?php 
-                            if(!intval($_SESSION['search-notification'])): ?>
-                                <p class="message-error"><?php echo $_SESSION['search-notification']; ?></p>
+                            if(!intval($_SESSION['search-notification'])): ?>   
+                                <p ><?php echo $_SESSION['search-notification']; ?></p>
 
                         <?php
                             else:
                         ?>
-                                <p class="message-success"><?php echo "Tìm thấy " .$_SESSION['search-notification'] ." môn học"; ?></p>
+                                <p ><?php echo "Số môn học tìm thấy :  " .$_SESSION['search-notification']; ?></p>
 
                         <?php
                             endif;
@@ -51,10 +51,10 @@
                                                         
                             <table>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>No</th>
                                     <th>Tên môn học</th>
                                     <th>Khóa</th>
-                                    <th>Mô tả</th>
+                                    <th>Mô tả chi tiết</th>
                                     <th>Action</th>
                                 </tr>
                             
@@ -64,14 +64,14 @@
                             foreach($_SESSION['dataSearch'] as $row): 
                         ?>
                                 <tr>
-                                    <td for=""><?php echo $row['id']; ?></td>
-                                    <td for=""><?php echo $row['name']; ?></td>
+                                    <td ><?php echo $row['id']; ?></td>
+                                    <td ><?php echo $row['name']; ?></td>
                                     <td><?php echo "Năm ". (2022- $row['school_year']); ?></td>
-                                    <td for=""><?php echo $row['description']; ?></td>
+                                    <td ><?php echo $row['description']; ?></td>
 
-                                    <td for="">
-                                    <button type="submit" name="remove-subject" class="btn-submit btn-remove" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
-                                    <button type="submit" name="change-subject" class="btn-submit btn-change" value = "<?php echo $row['id'];?>">Sửa</button>
+                                    <td>
+                                    <button type="submit" name="remove-subject" class="btn-update-remove" onclick="return confirm('Bạn chắc chắn muốn xóa phòng học  <?php echo $row['name'] ?>' );" value = "<?php echo $row['id'];?>">Xóa</button>
+                                    <button type="submit" name="change-subject" class="btn-update-remove" value = "<?php echo $row['id'];?>">Sửa</button>
                                     </td>
                                 </tr>
                               
