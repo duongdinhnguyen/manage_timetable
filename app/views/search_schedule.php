@@ -89,7 +89,7 @@
 						echo"<td>";
 						echo"<form method='post' action='?router=search-schedule'>";
 						echo'<button class="btn-submit" type="submit" name="remove-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
-						echo'<button class="btn-submit" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</button>";
+						echo'<a href="?router=search-schedule-change&id='.$row['id'].'" class="btn-submit">Sửa</a>';
 						echo"</form>";
 						echo"</td>";
 					echo "</tr>";

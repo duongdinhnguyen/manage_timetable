@@ -24,7 +24,9 @@ class Router{
             case 'search-schedule':
                 require_once './app/controllers/search_schedule.php';
                 break;
-            
+            case 'search-schedule-change':
+                require_once './app/controllers/search_schedule_change.php';
+                break;
             case 'add-teacher':
                 require_once './app/controllers/add_teacher.php';
                 break;
