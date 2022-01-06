@@ -31,10 +31,10 @@ class Subjects
         public function add_input()
         {
             $khoa  = [
-                2021=>'Năm 1',
-                2020=>'Năm 2',
-                2019=>'Năm 3',
-                2018=>'Năm 4',
+                1=>'Năm 1',
+                2=>'Năm 2',
+                3=>'Năm 3',
+                4=>'Năm 4',
 
             ];
             

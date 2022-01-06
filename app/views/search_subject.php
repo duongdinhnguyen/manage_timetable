@@ -17,10 +17,10 @@
                         <label for="khoa-hoc">Khóa học</label>
                         <select id="khoa-hoc" class="select-element" name="khoa-hoc">
                             <option value="" name="khoa-hoc">Chọn khóa học</option>
-                            <option value="2021" name="khoa-hoc">Năm 1</option>
-                            <option value="2020" name="khoa-hoc">Năm 2</option>
-                            <option value="2019" name="khoa-hoc">Năm 3</option>
-                            <option value="2018" name="khoa-hoc">Năm 4</option>
+                            <option value="1" name="khoa-hoc">Năm 1</option>
+                            <option value="2" name="khoa-hoc">Năm 2</option>
+                            <option value="3" name="khoa-hoc">Năm 3</option>
+                            <option value="4" name="khoa-hoc">Năm 4</option>
                         </select>
                     </div>
                     <div class="element">
