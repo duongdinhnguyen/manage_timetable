@@ -1,14 +1,18 @@
 <?php 
+<<<<<<< Updated upstream
 // require_once './app/controllers/checkLogin.php';
 // require_once './app/views/add_subject_confirm.php';
+=======
+require_once './app/controllers/checkLogin.php';
+
+>>>>>>> Stashed changes
 
 class Confirm
     {
 
         public function __construct()
         {
-        //   $this->UserModel = $this->model('Classroom');
-        //   $this->postModel = $this->model('Post');
+
             
             $this->add_confirm();
         }
@@ -16,13 +20,11 @@ class Confirm
         public function add_confirm(){ 
             $data = $_SESSION['data'];
             if (isset($_POST['btn_submit'])) {
-            // if (isset($_REQUEST['btn_submit'])) {
-                // print_r($data);
+            
                 require_once './app/models/subject.php';
-                // $row = $Subject->searchAllSubject();
-                // print_r($row);
+                
                 $result = $Subject->addSubject($data);
-                // $result = $Subject->se();
+               
                 if ($result) {
                     $row = $Subject->searchAllSubject();
 
@@ -60,12 +62,11 @@ class Confirm
 
 
                     $_SESSION['Msg-add-subject'] = 'Bạn đã đăng kí thành công';
-                    // header("refresh:3;view.php");
+                   
 
                     header("location:".URLROOT."/?router=add-subject-complete");
 
-                    // header("Location:". URLROOT ."/Subject/add_complate");
-                        // header('location:' . URLROOT . '/Subject/add_complate');
+            
                 }
             }else if (isset($_POST['btn_edit'])) {
                 header("location:".URLROOT."/?router=add-subject-edit");
