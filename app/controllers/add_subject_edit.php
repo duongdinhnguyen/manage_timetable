@@ -1,5 +1,5 @@
 <?php
-require_once './app/controllers/checkLogin.php';
+// require_once './app/controllers/checkLogin.php';
 class Edit
     {
         public function __construct()

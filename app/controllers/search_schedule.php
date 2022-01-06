@@ -1,5 +1,5 @@
 <?php
-require_once './app/controllers/checkLogin.php';
+// require_once './app/controllers/checkLogin.php';
 require_once './app/common/db.php';
 $DB = new DB();
 error_reporting(0);

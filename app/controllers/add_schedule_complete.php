@@ -1,5 +1,5 @@
 <?php 
-require_once './app/controllers/checkLogin.php';
+// require_once './app/controllers/checkLogin.php';
 
 class AddScheduleComplete{
     public function __construct(){

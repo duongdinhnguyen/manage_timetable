@@ -1,5 +1,5 @@
 <?php
-require_once './app/controllers/checkLogin.php';
+// require_once './app/controllers/checkLogin.php';
 class SearchSubject{
     public function __construct(){
         $_SESSION['search-notification']='';
