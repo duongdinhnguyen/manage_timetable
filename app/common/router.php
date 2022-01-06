@@ -30,6 +30,15 @@ class Router{
             case 'add-teacher':
                 require_once './app/controllers/add_teacher.php';
                 break;
+            case 'add-teacher-confirm':
+                require_once './app/controllers/add_teacher_confirm.php';
+                break;
+            case 'add-teacher-edit':
+                require_once './app/controllers/add_teacher_edit.php';
+                    break;
+            case 'add-teacher-complete':
+                require_once './app/controllers/add_teacher_complete.php';
+                break;
                 
             case 'add-subject':
                 require_once './app/controllers/add_subject.php';

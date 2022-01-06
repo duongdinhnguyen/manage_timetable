@@ -7,9 +7,7 @@ class Subjects
     {
         public function __construct()
         {
-        //   $this->UserModel = $this->model('Classroom');
-        //   $this->postModel = $this->model('Post');
-            
+        
             $this->add_input();
         }
         
@@ -21,10 +19,7 @@ class Subjects
             $data = [
                 'users' => $users
             ];
-            //gọi và show dữ liệu ra view
-            // $this->view('add_complate', [
-            //     'classroom' => $user
-            // ]);
+          
             $this->view('add_complate', $data);
         }
 
@@ -40,8 +35,7 @@ class Subjects
             
             //Check for POST
             if (isset($_POST['submit'])) {
-                // if ($_SERVER['REQUEST_METHOD']=='POST') {
-                // Sanitize POST Data
+                
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
                 // Process form
@@ -150,30 +144,7 @@ class Subjects
             $_SESSION['data'] = $data;
             header("location:".URLROOT."/?router=add-subject-confirm");
         }
-        // public function delete_files($target) {
-        //     if (is_dir($target)) {
-        //         $files = glob( $target . '*', GLOB_MARK ); //GLOB_MARK adds a slash to directories returned
-        
-        //         foreach( $files as $file )
-        //         {
-        //             $this->delete_files( $file );
-        //         }
-        
-        //         rmdir( $target );
-        //     } elseif (is_file($target)) {
-        //         unlink( $target );
-        //     }
-        // }
     
-
-        // public function delete($id){
-        //     $delete = $this->UserModel->deleteSubject($id);
-        //     $this->delete_files(AVATA.$id);
-        //     if($delete){
-        //         header('location:' . URLROOT . '/Subject/add_complate');
-        //     }
-        //     $this->view('add_complate');
-        // }
 
     }
 $add = new Subjects();

@@ -19,10 +19,15 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 
 <body>
 	<div class="timetable">
-		<form action="" class="form" method="GET">
+		<form action="" class="form" method="post">
 			<div class="main">
 				<div class="element">
 				<?php 
+				$specialized = [
+					1=>'Khoa học máy tính',
+					2=>'Khoa học dữ liệu',
+					3=>'Hải dương học'
+				];
 				echo $_SESSION['search-notification-tc'];
 				?>
 				</div>
@@ -73,9 +78,14 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 						foreach($_SESSION['dataSearchTc'] as $row): 
 						?>
 							<tr>
+								<td ><?php echo $row['id']; ?></td>
+								<td ><?php echo $row['name']; ?></td>
+								<td ><?php echo $specialized[$row['specialized']] ?></td>
+								<td ><?php echo $row['description']; ?></td>
+
 								<td>
 								<button type="submit" name="remove-teacher" class="btn-submit btn-remove" onclick="return confirm('Bạn chắc chắn muốn xóa?');" value = "<?php echo $row['id'];?>">Xóa</button>
-								<button type="submit" name="change-subject" class="btn-submit btn-change" value = "<?php echo $row['id'];?>">Sửa</button>
+								<button type="submit" name="change-teacher" class="btn-submit btn-change" value = "<?php echo $row['id'];?>">Sửa</button>
 								</td>
 							</tr>
 						<?php endforeach; ?>

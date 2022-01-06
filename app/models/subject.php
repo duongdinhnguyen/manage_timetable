@@ -30,8 +30,7 @@ class Subject extends DB{
         return $array;
     }
     public function addSubject($data){
-        // $sql= "DELETE FROM subjects WHERE id='$id'";
-        // $this->__conn->exec($sql);
+ 
 
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $created = date("Y-m-d H:m:s");
@@ -46,11 +45,7 @@ class Subject extends DB{
         $stmt->bindParam(':fcreated',$created);
         // Execute
         return $stmt->execute(); 
-        // if ( $add->execute() ) {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
+  
     }
 
     public function updateSubject($data){
@@ -73,13 +68,12 @@ class Subject extends DB{
         }
     }
     public function getSubject($id){
-        // $sql = "SELECT name FROM subjects WHERE id='$id'";
+
         $stmt = $this->__conn->prepare("select * from subjects where id=:id");
         $stmt->bindParam(':id',$id);
         $stmt->execute();
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        // $array = [$data];
-        // $array = array_merge($array, [$data]);
+       
         return $data;
     }
     

@@ -1,10 +1,4 @@
 <?php
-// require_once './app/controllers/checkLogin.php';
-if(!isset($_SESSION['login']) || $_SESSION['login']==''){
-    header("location:http://localhost/manage_timetable/");
-    // header('location:'.URLROOT.'/');
-}
-
 $data = $_SESSION['data'];
 ?>
 <!DOCTYPE html>
@@ -23,16 +17,20 @@ $data = $_SESSION['data'];
         <!-- <form method='post' action='' enctype='multipart/form-data'>         -->
             <div class="from-from">
                 <div class="from-from__group">
-                    <span class="from-from__label">mon hoc</span>
+                    <span class="from-from__label">Tên</span>
                     <span class="from-from__input"><?php echo $data['name'] ?></span>
                 </div>
                 <div class="from-from__group">
-                    <span class="from-from__label">khoa</span>
-                    <span class="from-from__input"><?php echo $data['nam'][$data['khoa']] ?></span>
+                    <span class="from-from__label">Chuyên ngành</span>
+                    <span class="from-from__input"><?php echo $data['specializes'][$data['specialized']] ?></span>
+                </div>
+                <div class="from-from__group">
+                    <span class="from-from__label">Học vị</span>
+                    <span class="from-from__input"><?php echo $data['degrees'][$data['degree']] ?></span>
                 </div>
                 <div class="from-from__group">
                     <span class="from-from__label">Mo ta chi tiet</span>
-                    <span class="from-from__input"><?php  echo $data['mota'] ?></span>
+                    <span class="from-from__input"><?php  echo $data['description'] ?></span>
                     
                 </div>
         
