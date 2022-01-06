@@ -36,9 +36,14 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 					<label for="bo-mon">Bộ môn</label>
 					<select id="bo-mon" class="select-element" name="bo-mon">
 					    <option value="" name="bo-mon">Chọn bộ môn</option>
-					    <option value="com-sc" name="bo-mon">Khoa hoc m</option>
+						<?php foreach($specialized as $key => $row) {
+							?>
+								<option value="<?= $key ?>" name="bo-mon"> <?= $row ?></option>
+							<?php
+						} ?>
+					    <!-- <option value="com-sc" name="bo-mon">Khoa hoc m</option>
 					    <option value="data-sc" name="bo-mon">Khoa hoc d</option>
-					    <option value="ocean" name="bo-mon">Hai duong</option>
+					    <option value="ocean" name="bo-mon">Hai duong</option> -->
 					</select>
 				</div>
 

@@ -1,8 +1,5 @@
 <?php
-<<<<<<< Updated upstream
 // require_once './app/controllers/checkLogin.php';
-=======
-require_once './app/controllers/checkLogin.php';
 class SearchTeacher{
     public function __construct(){
         $_SESSION['search-notification-tc']='';
@@ -63,13 +60,13 @@ class SearchTeacher{
         // Nếu nhấn vào button tìm kiếm
         else if(isset($_REQUEST['search-teacher'])){
             $_SESSION['key-search']= '';
-            if(empty($_REQUEST['khoa-hoc']) && empty(trim($_REQUEST['keyword']))){
+            if(empty($_REQUEST['bo-mon']) && empty(trim($_REQUEST['keyword']))){
                 $_SESSION['search-notification-tc']='Điền ít nhất 1 trường để tìm kiếm';
 
             }
         
             else {
-                $khoa = !empty($_REQUEST['khoa-hoc']) ? $_REQUEST['khoa-hoc'] : null;
+                $khoa = !empty($_REQUEST['bo-mon']) ? $_REQUEST['bo-mon'] : null;
                 $keyword = !empty(trim($_REQUEST['keyword'])) ? trim($_REQUEST['keyword']) : null;
                 $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
                 require_once './app/models/teacher.php';
@@ -102,5 +99,4 @@ class SearchTeacher{
     }
 }
 $SearchTeacher = new SearchTeacher();
->>>>>>> Stashed changes
 require_once './app/views/search_teacher.php';
