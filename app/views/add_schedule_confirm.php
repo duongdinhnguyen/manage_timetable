@@ -48,7 +48,7 @@
                 </div>
                 <div class="element">
                     <a class="btn-submit btn-change" name= "change" href="?router=add-schedule">Sửa lại</a>
-                    <button type="submit" class="btn-submit" name="add-new-schedule">Đăng kí</button>
+                    <button type="submit" class="btn-submit" name="add-new-schedule">Tiếp tục</button>
                 </div>
                 <div class="element">
                     <a href="?router=home">Trở về trang chủ</a>

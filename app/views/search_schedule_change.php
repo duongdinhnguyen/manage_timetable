@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    Screen change schedule
+    <?php
+       for($i=0; $i<count($data); $i++){
+            echo $data[$i];
+       }
+    ?>
 </body>
 </html>

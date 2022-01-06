@@ -10,6 +10,22 @@ class Schedule extends DB{
         $_SESSION['add-schedule-complete-notifi']= "Bạn đã tạo thêm thành công thời khóa biểu.";
     }
 
+    //update schedule
+    public function updateSchedule($data, $id){
+        $sql="UPDATE schedules SET school_year='$data[0]', subject_id='$data[1]', teacher_id='$data[2]', week_day='$data[3]', lesson='$data[4]', notes='$data[5]' WHERE id='$id'";
+        $this->__conn->exec($sql);
+        $_SESSION['add-schedule-complete-notifi']= "Bạn đã thay đổi thành công thời khóa biểu có id = ".$id;
+    }
+
+    // search schedule from id
+    public function searchScheduleFromId($id){
+        $sql="SELECT school_year, subject_id, teacher_id, week_day, lesson, notes FROM schedules WHERE id='$id'";
+        $data= $this->__conn->query($sql);
+        foreach($data as $row){
+            return [$row['school_year'], $row['subject_id'], $row['teacher_id'], $row['week_day'], $row['lesson'], $row['notes']];
+        }
+    }
+
     // Tìm kiếm trong table
     public function searchSchedule($khoa, $subject, $teacher){
         if($khoa !=null){
@@ -58,6 +74,8 @@ class Schedule extends DB{
         }
         return $array;
     }
+
+    
 }
 
 $Schedule = new Schedule();

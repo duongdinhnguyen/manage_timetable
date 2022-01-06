@@ -32,6 +32,10 @@ error_reporting(0);
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$schedule_id = test_input($_POST["remove-schedule"]);
+			if(isset($_REQUEST['change-schedule'])){
+				$_SESSION['data-schedule-update'] =$_REQUEST['change-schedule'];// gán id schedule cần thay đổi
+				header('location:'.URLROOT.'/?router=search-schedule-change');
+			}
 		}
 		if($schedule_id != ''){
 			$sql = "delete from schedules where id = ".$schedule_id;

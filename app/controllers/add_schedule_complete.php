@@ -3,6 +3,7 @@ require_once './app/controllers/checkLogin.php';
 
 class AddScheduleComplete{
     public function __construct(){
+
         $_SESSION['add-schedule-complete-notifi'] = "";
         $data = isset($_SESSION['add-schedule-data']) ? $_SESSION['add-schedule-data'] : [];
         $_SESSION['add-schedule-data'] =['','','','',[],''];
@@ -14,7 +15,16 @@ class AddScheduleComplete{
         // $_SESSION['add-schedule-complete-notifi'] = $data[4] ."   " .$data[5];
 
         require_once './app/models/schedule.php';
-        $Schedule-> insert($data);
+        if(isset($_SESSION['data-schedule-update'])  && $_SESSION['data-schedule-update'] !=0){
+            $Schedule->updateSchedule($data, $_SESSION['data-schedule-update']);// đưa dữ liệu cần thay đổi và id để update vào table schedule
+            $_SESSION['data-schedule-update'] =0;
+
+        }
+        else{
+            $Schedule-> insert($data);
+
+        }
+
     }
 
     // Tạo file chứa thông tin Tiết học và notes
