@@ -15,7 +15,7 @@
         console.log(file)
         if(validFileType(file)) {
             image.src=""
-            preview.children[0].textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+            preview.children[0].textContent = `File name ${file.name}.`;
             
             image.src = URL.createObjectURL(file);
             
