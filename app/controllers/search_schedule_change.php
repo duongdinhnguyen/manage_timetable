@@ -1,12 +1,13 @@
 <?php
 class SearchScheduleChange{
-    // public $dataTest;
+    public $dataTest;
     public function __construct(){
         require_once './app/models/schedule.php';
 
         $id =$_SESSION['data-schedule-update'];
 
         $data= $Schedule->searchScheduleFromId($id);
+        // $this->dataTest=$data;
         $data[4] = $this->readLesson($data[4]);
         // $this->dataTest = $this->readLesson($data[4]);
         $data[5] = $this->readNote($data[5]);
@@ -40,5 +41,5 @@ class SearchScheduleChange{
     }
 }
 $SearchScheduleChange = new SearchScheduleChange();
-// $data = $SearchScheduleChange->dataTest;
-// require_once './app/views/search_schedule_change.php';
+// $dataTest = $SearchScheduleChange->dataTest;
+// require_once './app/views/test.php';

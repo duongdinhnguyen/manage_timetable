@@ -109,7 +109,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 						echo'<button class="btn-submit btn-remove" type="submit" name="remove-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
 						echo'<input name="lesson" value="';echo $row['lesson'];echo '" type="hidden"></input>';
 						echo'<input name="note" value="';echo $row['notes'];echo '" type="hidden"></input>';
-						echo'<button class="btn-submit btn-change" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</a>";
+						echo'<button class="btn-submit btn-change" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value ="' . $row['id'].'"';echo">Sửa</a>";
 						echo"</form>";
 						echo"</td>";
 					echo "</tr>";

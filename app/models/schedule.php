@@ -24,6 +24,7 @@ class Schedule extends DB{
         foreach($data as $row){
             return [$row['school_year'], $row['subject_id'], $row['teacher_id'], $row['week_day'], $row['lesson'], $row['notes']];
         }
+        // return [$id];
     }
 
     // Tìm kiếm trong table

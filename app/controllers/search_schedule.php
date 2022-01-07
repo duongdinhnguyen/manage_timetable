@@ -45,8 +45,7 @@ error_reporting(0);
 			unlink("./web/file/lesson/".$lesson_file);
 			unlink("./web/file/note/".$note_file);
 		}
-		$sql = "Select * From ((schedules inner join subjects on schedules.subject_id = subjects.id) inner join teachers on schedules.teacher_id = teachers.id)";
-
+		$sql = "Select schedules.id, schedules.school_year, schedules.subject_id,schedules.teacher_id, schedules.week_day, schedules.lesson,schedules.notes From ((schedules inner join subjects on schedules.subject_id = subjects.id) inner join teachers on schedules.teacher_id = teachers.id)";
 		if($school_year != "" or $subject_id != "" or $teacher_id != ""){
 
 			$sql = $sql."where ";
