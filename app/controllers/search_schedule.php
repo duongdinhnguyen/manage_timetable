@@ -12,11 +12,6 @@ error_reporting(0);
 		$subject_id = '';
 		$teacher_id = '';
 
-
-		$sql = "Select id,name From subjects ";
-		$subjects_log = $DB->__conn->query($sql);
-		$sql = "Select id,name From teachers ";
-		$teachers_log = $DB->__conn->query($sql);
 		function test_input($data) {
 		  $data = trim($data);
 		  $data = stripslashes($data);
@@ -66,14 +61,4 @@ error_reporting(0);
 		
 		
 		
-		
-		// $subjects = array();
-		// while($row = $subjects_log->fetch(PDO::FETCH_ASSOC)){
-		// 	$subjects[] = array($row["id"],$row["name"]);
-		// }
-		// $teachers = array();
-		// while($row = $teachers_log->fetch(PDO::FETCH_ASSOC)){
-		// 	$teachers[] = array($row["id"],$row["name"]);
-			
-		// }
 require_once 'app/views/search_schedule.php';

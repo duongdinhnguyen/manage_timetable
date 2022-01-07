@@ -95,12 +95,16 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 						echo "<td>"; echo$row["week_day"]; echo"</td>";
 						echo "<td>"; 
 						
-						$txt_file = fopen("./web/file/lesson/".$row["lesson"],'r');
-						while ($line = fgets($txt_file)) {
-						 echo($line." ");
+						if(file_exists("./web/file/lesson/".$row["lesson"]) == 1){
+							$txt_file = fopen("./web/file/lesson/".$row["lesson"],'r');
+							while ($line = fgets($txt_file)) {
+							 echo($line." ");
+							}
+							fclose($txt_file);
 						}
-						fclose($txt_file);
-						
+						else{
+							echo 'unavailable';
+						}
 						
 						
 						echo"</td>";
