@@ -2,27 +2,27 @@
 // require_once './app/controllers/checkLogin.php';
 class SearchTeacher{
     public function __construct(){
+        require_once './app/models/teacher.php';
         $_SESSION['search-notification-tc']='';
-        $_SESSION['dataSearchTc'] = null;
+        $_SESSION['dataSearchTc'] = $Teacher->searchAllTeacher();
         // xóa và refesh lại trang
         if(isset($_REQUEST['remove-teacher'])){
-            require_once './app/models/teacher.php';
             $Teacher->removeTeacher($_REQUEST['remove-teacher']);
             $this->delete_files(AVATA.'teachers/'.$_REQUEST['remove-teacher']);
-            if(isset($_SESSION['key-search'])  && $_SESSION['key-search'] != ''){
-                // Nếu tồn tại key-search thì tìm kiếm lại key search sau khi xóa
-                $khoa = $_SESSION['key-search'][0];
-                $keyword = $_SESSION['key-search'][1];
-                $_SESSION['dataSearchTc'] = $Teacher->searchTeacher($khoa, $keyword); // trả về mảng khi tìm kiếm 
-                $_SESSION['key-search'] = '';
-            }
-            
+            // if(isset($_SESSION['key-search'])  && $_SESSION['key-search'] != ''){
+            //     // Nếu tồn tại key-search thì tìm kiếm lại key search sau khi xóa
+            //     $khoa = $_SESSION['key-search'][0];
+            //     $keyword = $_SESSION['key-search'][1];
+            //     $_SESSION['dataSearchTc'] = $Teacher->searchTeacher($khoa, $keyword); // trả về mảng khi tìm kiếm 
+            //     $_SESSION['key-search'] = '';
+            // }
+
+            $_SESSION['dataSearchTc'] = $Teacher->searchAllTeacher();
             $_SESSION['search-notification-tc'] = "Đã xóa môn học có id = ".$_REQUEST['remove-teacher'];
 
         }
         else if(isset($_REQUEST['change-teacher'])){
             // $_SESSION['id'] = $_REQUEST['search-subject'];
-            require_once './app/models/teacher.php';
             $sub = $Teacher->getTeacher($_REQUEST['change-teacher']);
             $specialized = [
                 1=>'Khoa học máy tính',
@@ -68,8 +68,7 @@ class SearchTeacher{
             else {
                 $khoa = !empty($_REQUEST['bo-mon']) ? $_REQUEST['bo-mon'] : null;
                 $keyword = !empty(trim($_REQUEST['keyword'])) ? trim($_REQUEST['keyword']) : null;
-                $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
-                require_once './app/models/teacher.php';
+                // $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
                 $_SESSION['dataSearchTc'] = $Teacher->searchTeacher($khoa, $keyword); // trả về mảng khi tìm kiếm
                 $_SESSION['search-notification-tc'] = count($_SESSION['dataSearchTc']);
                 

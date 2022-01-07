@@ -28,7 +28,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 					2=>'Khoa học dữ liệu',
 					3=>'Hải dương học'
 				];
-				echo $_SESSION['search-notification-tc'];
+				// echo $_SESSION['search-notification-tc'];
 				?>
 				</div>
 
@@ -57,14 +57,24 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 				</div>
 
 				<div class="element">
-				    <?php 
-				    if(!intval($_SESSION['search-notification-tc'])): ?>
-					<p class="message-error"><?php echo $_SESSION['search-notification-tc']; ?></p>
 				    <?php
-				    else:
-				    ?>
-					<p class="message-success"><?php echo "Tìm thấy " .$_SESSION['search-notification-tc'] ." giáo viên"; ?></p>
-				    <?php endif; ?>    
+					if(!intval($_SESSION['search-notification-tc'])):
+					?>
+						<p class="message-error">
+							<?php
+								if($_SESSION['search-notification-tc']==0){
+									echo "Không tìm thấy giáo viên"; 
+								}
+								else echo $_SESSION['search-notification-tc']; 
+							?>
+						</p>
+					<?php
+					else:
+					?>
+						<p class="message-success"><?php echo "Tìm thấy " .$_SESSION['search-notification-tc'] ." giáo viên"; ?></p>		 
+					<?php
+					endif;
+					?>    
 				</div>
 				
 				<?php 
