@@ -60,7 +60,12 @@ class SearchSubject{
                 $keyword = !empty(trim($_REQUEST['keyword'])) ? trim($_REQUEST['keyword']) : null;
                 // $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
                 $_SESSION['dataSearch'] = $Subject->searchSubject($khoa, $keyword); // trả về mảng khi tìm kiếm
-                $_SESSION['search-notification'] = count($_SESSION['dataSearch']);
+                if(intval(count($_SESSION['dataSearch']))>0){
+                    $_SESSION['search-notification'] = count($_SESSION['dataSearch']);
+                }
+                else{
+                    $_SESSION['search-notification'] =-1;
+                }
                 
             }
 
