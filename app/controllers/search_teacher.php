@@ -62,7 +62,13 @@ class SearchTeacher{
                 $keyword = !empty(trim($_REQUEST['keyword'])) ? trim($_REQUEST['keyword']) : null;
                 // $_SESSION['key-search'] = [$khoa, $keyword];// Lưu tạm data search để sau khi xóa sẽ hiển thị lại
                 $_SESSION['dataSearchTc'] = $Teacher->searchTeacher($khoa, $keyword); // trả về mảng khi tìm kiếm
-                $_SESSION['search-notification-tc'] = count($_SESSION['dataSearchTc']);
+                // $_SESSION['search-notification-tc'] = count($_SESSION['dataSearchTc']);
+                if(intval(count($_SESSION['dataSearchTc']))>0){
+                    $_SESSION['search-notification-tc'] = count($_SESSION['dataSearchTc']);
+                }
+                else{
+                    $_SESSION['search-notification-tc'] = -1;
+                }
                 
             }
 
