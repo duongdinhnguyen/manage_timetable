@@ -90,8 +90,8 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 					echo "<tr>";
 						echo "<td>"; echo$count; echo"</td>";
 						echo "<td>"; echo$row["school_year"]; echo"</td>";
-						echo "<td>"; echo$subjects[$row["subject_id"]-1][1]; echo"</td>";
-						echo "<td>"; echo$teachers[$row["teacher_id"]-1][1]; echo"</td>";
+						echo "<td>"; echo$subjects[$count-1][1]; echo"</td>";
+						echo "<td>"; echo$teachers[$count-1][1]; echo"</td>";
 						echo "<td>"; echo$row["week_day"]; echo"</td>";
 						echo "<td>"; 
 						
