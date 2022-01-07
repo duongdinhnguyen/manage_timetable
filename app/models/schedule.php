@@ -12,11 +12,11 @@ class Schedule extends DB{
 
     //update schedule
     public function updateSchedule($data, $id){
-        $sql="UPDATE schedules SET school_year='$data[0]', subject_id='$data[1]', teacher_id='$data[2]', week_day='$data[3]', lesson='$data[4]', notes='$data[5]' WHERE id='$id'";
+        $sql="UPDATE schedules SET school_year='$data[0]', subject_id='$data[1]', teacher_id='$data[2]', week_day='$data[3]' WHERE id='$id'";
         $this->__conn->exec($sql);
         $_SESSION['add-schedule-complete-notifi']= "Bạn đã thay đổi thành công thời khóa biểu có id = ".$id;
     }
-
+    
     // search schedule from id
     public function searchScheduleFromId($id){
         $sql="SELECT school_year, subject_id, teacher_id, week_day, lesson, notes FROM schedules WHERE id='$id'";

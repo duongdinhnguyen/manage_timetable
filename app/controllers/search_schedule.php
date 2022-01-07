@@ -45,35 +45,35 @@ error_reporting(0);
 			unlink("./web/file/lesson/".$lesson_file);
 			unlink("./web/file/note/".$note_file);
 		}
-		$sql = "Select schedules.id, schedules.school_year, schedules.subject_id,schedules.teacher_id, schedules.week_day, schedules.lesson,schedules.notes From ((schedules inner join subjects on schedules.subject_id = subjects.id) inner join teachers on schedules.teacher_id = teachers.id)";
+		$sql = "Select schedules.id, schedules.school_year, subjects.name as nameSubject,teachers.name as nameTeacher, schedules.week_day, schedules.lesson,schedules.notes From ((schedules inner join subjects on schedules.subject_id = subjects.id) inner join teachers on schedules.teacher_id = teachers.id)";
 		if($school_year != "" or $subject_id != "" or $teacher_id != ""){
 
 			$sql = $sql."where ";
 			if($school_year != "")
-				$sql = $sql."school_year = '$school_year' ";
+				$sql = $sql."schedules.school_year = '$school_year' ";
 			if($subject_id != "")
 				if($school_year != "")
-					$sql = $sql."and subject_id = '$subject_id' ";
+					$sql = $sql."and schedules.subject_id = '$subject_id' ";
 				else
-					$sql = $sql."subject_id = '$subject_id' ";
+					$sql = $sql."schedules.subject_id = '$subject_id' ";
 			if($teacher_id != "")
 				if($school_year != "" or $subject_id != "")
-					$sql = $sql."and teacher_id = '$teacher_id' ";
+					$sql = $sql."and schedules.teacher_id = '$teacher_id' ";
 				else
-					$sql = $sql."teacher_id = '$teacher_id' ";
+					$sql = $sql."schedules.teacher_id = '$teacher_id' ";
 		}
 		$log = $DB->__conn->query($sql);
 		
 		
 		
 		
-		$subjects = array();
-		while($row = $subjects_log->fetch(PDO::FETCH_ASSOC)){
-			$subjects[] = array($row["id"],$row["name"]);
-		}
-		$teachers = array();
-		while($row = $teachers_log->fetch(PDO::FETCH_ASSOC)){
-			$teachers[] = array($row["id"],$row["name"]);
+		// $subjects = array();
+		// while($row = $subjects_log->fetch(PDO::FETCH_ASSOC)){
+		// 	$subjects[] = array($row["id"],$row["name"]);
+		// }
+		// $teachers = array();
+		// while($row = $teachers_log->fetch(PDO::FETCH_ASSOC)){
+		// 	$teachers[] = array($row["id"],$row["name"]);
 			
-		}
+		// }
 require_once 'app/views/search_schedule.php';
