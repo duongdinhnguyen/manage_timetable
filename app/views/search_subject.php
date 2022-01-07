@@ -43,7 +43,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                             if(!intval($_SESSION['search-notification'])): ?>   
                                 <p class="message-error">
                                     <?php
-                                        if($_SESSION['search-notification']==0){
+                                        if($_SESSION['search-notification']==' '){
                                             echo "Không tìm thấy môn học"; 
                                         }
                                         else echo $_SESSION['search-notification']; 
