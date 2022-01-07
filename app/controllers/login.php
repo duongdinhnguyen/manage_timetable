@@ -6,20 +6,15 @@ class Login{
         if(isset($_REQUEST['login-submit'])){
             // Nếu chưa nhập user
             if(empty($_REQUEST['value-user']) || trim($_REQUEST['value-user'])==''){
-                $_SESSION['login']= 'Chưa nhập user';
+                $_SESSION['login']= 'Chưa nhập tài khoản';
             }
             // Nếu nhập user <4 ký tự
             else if(strlen(trim($_REQUEST['value-user']))<4){
-                $_SESSION['login']= 'Hãy nhập user tối thiểu 4 ký tự';
+                $_SESSION['login']= 'Hãy nhập tài khoản tối thiểu 4 ký tự';
             }
             // Nếu chưa nhập password
             else if(empty($_REQUEST['value-password']) || trim($_REQUEST['value-password'])==''){
-                $_SESSION['login']= 'Chưa nhập password';
-            }
-            // Nếu nhập password < 6 ký tự
-            else if(strlen(trim($_REQUEST['value-password']))<6){
-                $_SESSION['login']= 'Hãy nhập password tối thiểu 6 ký tự';
-                
+                $_SESSION['login']= 'Chưa nhập mật khẩu';
             }
             else{
                 require_once './app/models/admin.php';
@@ -28,7 +23,7 @@ class Login{
                 $data = $Admin->select_All_Admin();
                 $result = $this->check($data, $user, $password);
                 if($result == null){
-                    $_SESSION['login']= "Sai username hoặc mật khẩu, vui lòng nhập lại !!!";
+                    $_SESSION['login']= "Sai tài khoản hoặc mật khẩu, vui lòng nhập lại !!!";
                 }
                    
                 else  {

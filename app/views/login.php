@@ -17,7 +17,7 @@
                     <p class="message-error"><?php echo $_SESSION["login"]; ?></p>
                 </div>
                 <div class="element">
-                    <label for="login-user">Tên đăng nhập</label>
+                    <label for="login-user">Tài khoản</label>
                     <input id="login-user" type="text" class="input-element" name="value-user">
                 </div>
                 <div class="element">
@@ -25,7 +25,7 @@
                     <input id="login-password" type="password" class="input-element" name="value-password">
                 </div>
                 <div class="element">
-                    <a href="?router=reset-password">Reset password</a>
+                    <a href="?router=reset-password">Đặt lại mật khẩu</a>
                 </div>
                 <div class="element">
                     <button type="submit" class="btn-submit" name= "login-submit" >Đăng nhập</button>

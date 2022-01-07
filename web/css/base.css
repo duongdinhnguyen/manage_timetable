@@ -63,6 +63,17 @@ html{
     box-shadow: 0 0 3px var(--background-color-info2);
     background-color: var(--background-color-success);
 }
+.element a{
+    text-decoration: none;
+    color: blue;
+}
+.element a:hover{
+    color: red;
+    transition: 0.25s;
+}
+.element button: hover{
+    transition: 0.25s;
+}
 .select-element,
 .option-element,
 .input-element,
