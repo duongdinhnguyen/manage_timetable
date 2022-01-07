@@ -75,10 +75,11 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                            
                             
                         <?php
+                            $count = 1;
                             foreach($_SESSION['dataSearch'] as $row): 
                         ?>
                                 <tr>
-                                    <td ><?php echo $row['id']; ?></td>
+                                    <td ><?php echo $count;$count++; ?></td>
                                     <td ><?php echo $row['name']; ?></td>
                                     <td><?php echo "Năm ". $row['school_year']; ?></td>
                                     <td ><?php echo $row['description']; ?></td>

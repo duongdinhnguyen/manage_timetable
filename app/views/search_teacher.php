@@ -90,10 +90,11 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 						</tr>
 
 						<?php
+						 $count = 1;
 						foreach($_SESSION['dataSearchTc'] as $row): 
 						?>
 							<tr>
-								<td ><?php echo $row['id']; ?></td>
+								<td ><?php echo $count; $count++; ?></td>
 								<td ><?php echo $row['name']; ?></td>
 								<td ><?php echo $specialized[$row['specialized']] ?></td>
 								<td ><?php echo $row['description']; ?></td>
