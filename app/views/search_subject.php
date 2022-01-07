@@ -43,7 +43,10 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                             if(!intval($_SESSION['search-notification'])): ?>   
                                 <p class="message-error">
                                     <?php
-                                        echo $_SESSION['search-notification']; 
+                                        if($_SESSION['search-notification']==''){
+                                            echo "Không tìm thấy môn học"; 
+                                        }
+                                        else echo $_SESSION['search-notification']; 
                                     ?>
                                 </p>
 
@@ -77,7 +80,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                                 <tr>
                                     <td ><?php echo $row['id']; ?></td>
                                     <td ><?php echo $row['name']; ?></td>
-                                    <td><?php echo "Năm ". (2022- $row['school_year']); ?></td>
+                                    <td><?php echo "Năm ". $row['school_year']; ?></td>
                                     <td ><?php echo $row['description']; ?></td>
 
                                     <td>
