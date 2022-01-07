@@ -9,16 +9,8 @@ class SearchTeacher{
         if(isset($_REQUEST['remove-teacher'])){
             $Teacher->removeTeacher($_REQUEST['remove-teacher']);
             $this->delete_files(AVATA.'teachers/'.$_REQUEST['remove-teacher']);
-            // if(isset($_SESSION['key-search'])  && $_SESSION['key-search'] != ''){
-            //     // Nếu tồn tại key-search thì tìm kiếm lại key search sau khi xóa
-            //     $khoa = $_SESSION['key-search'][0];
-            //     $keyword = $_SESSION['key-search'][1];
-            //     $_SESSION['dataSearchTc'] = $Teacher->searchTeacher($khoa, $keyword); // trả về mảng khi tìm kiếm 
-            //     $_SESSION['key-search'] = '';
-            // }
-
             $_SESSION['dataSearchTc'] = $Teacher->searchAllTeacher();
-            $_SESSION['search-notification-tc'] = "Đã xóa môn học có id = ".$_REQUEST['remove-teacher'];
+            $_SESSION['search-notification-tc'] = "Đã xóa giáo viên có id = ".$_REQUEST['remove-teacher'];
 
         }
         else if(isset($_REQUEST['change-teacher'])){
