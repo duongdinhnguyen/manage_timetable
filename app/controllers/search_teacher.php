@@ -10,7 +10,7 @@ class SearchTeacher{
             $Teacher->removeTeacher($_REQUEST['remove-teacher']);
             $this->delete_files(AVATA.'teachers/'.$_REQUEST['remove-teacher']);
             $_SESSION['dataSearchTc'] = $Teacher->searchAllTeacher();
-            $_SESSION['search-notification-tc'] = "Đã xóa môn học có id = ".$_REQUEST['remove-teacher'];
+            $_SESSION['search-notification-tc'] = "Đã xóa giáo viên có id = ".$_REQUEST['remove-teacher'];
 
         }
         else if(isset($_REQUEST['change-teacher'])){
