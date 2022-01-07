@@ -4,7 +4,7 @@ class SearchSubject{
     public function __construct(){
         require_once './app/models/subject.php';
         $_SESSION['search-notification']='';
-        $_SESSION['dataSearch'] = '';
+        $_SESSION['dataSearch'] = $Subject->searchAllSubject();
         // xóa và refesh lại trang
         if(isset($_REQUEST['remove-subject'])){
             $Subject->removeSubject($_REQUEST['remove-subject']);
