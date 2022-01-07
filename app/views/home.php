@@ -19,11 +19,11 @@
         <div class="form">
             <div class="main">
                 <div class="element">
-                    <p>Tên login: <?php echo $_SESSION['login'];?></p>
+                    <p>Tài khoản: <?php echo $_SESSION['login'];?></p>
                     
                 </div>
                 <div class="element">
-                    <p>Thời gian login: <?php 
+                    <p>Thời gian đăng nhập: <?php 
                             
                             date_default_timezone_set('Asia/Ho_Chi_Minh');
         

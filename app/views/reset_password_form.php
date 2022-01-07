@@ -13,7 +13,7 @@
         <form action="" class="form" method="POST">
             <div class="main">
                 <div class="element">
-                    <b style="min-width:120px;text-align:center;">Tên người dùng</b>
+                    <b style="min-width:120px;text-align:center;">Tài khoản</b>
                     <b style="min-width:120px;text-align:center;">Mật khẩu mới</b>
                     <b style="min-width:120px;text-align:center;">Reset Password Token</b>
                     <b style="min-width:120px;text-align:center;">Action</label>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="element">
                     <!-- <a href="http://localhost/manage_timetable/">Quay lại trang login</a> -->
-                    <a href="<?= URLROOT ?>/">Quay lại trang login</a>
+                    <a href="<?= URLROOT ?>/">Quay lại trang đăng nhập</a>
                 </div>
             </div>
         </form>

@@ -24,10 +24,10 @@
                     <input id="reset-password" type="text" class="input-element" name="reset-input">
                 </div>
                 <div class="element">
-                    <button type="submit" class="btn-submit" name="reset-password">Gửi yêu cầu reset password</button>
+                    <button type="submit" class="btn-submit" name="reset-password">Đặt lại mật khẩu</button>
                 </div>
                 <div class="element">
-                    <a href="?">Quay lại trang login</a>
+                    <a href="?">Quay lại</a>
                 </div>
             </div>
         </form>
