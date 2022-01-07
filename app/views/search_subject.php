@@ -36,22 +36,28 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                         <input type="text" id="tu-khoa" class="input-element" name="keyword">
                     </div>
                     <div class="element">
-                        <button type="submit" class="btn-search" name="search-subject">Tìm kiếm</button>
+                        <button type="submit" class="btn-submit" name="search-subject">Tìm kiếm</button>
                     </div>
-                    <div>
+                    <div class="element">
                         <?php 
                             if(!intval($_SESSION['search-notification'])): ?>   
-                                <p ><?php echo $_SESSION['search-notification']; ?></p>
+                                <p class="message-error">
+                                    <?php
+                                        if($_SESSION['search-notification']==0){
+                                            echo "Không tìm thấy môn học"; 
+                                        }
+                                        else echo $_SESSION['search-notification']; 
+                                    ?>
+                                </p>
 
                         <?php
                             else:
                         ?>
-                                <p ><?php echo "Số môn học tìm thấy :  " .$_SESSION['search-notification']; ?></p>
+                                <p class="message-success"><?php echo "Số môn học tìm thấy :  " .$_SESSION['search-notification']; ?></p>
 
                         <?php
                             endif;
                         ?>
-                        
                     </div>
                     <?php 
                         if($_SESSION['dataSearch']): // kiểm tra $_SESSION['dataSearch'] có value hay không? khác với kiểm tra isset

@@ -1,11 +1,8 @@
 <?php 
-<<<<<<< Updated upstream
 // require_once './app/controllers/checkLogin.php';
 // require_once './app/views/add_subject_confirm.php';
-=======
-require_once './app/controllers/checkLogin.php';
+// require_once './app/controllers/checkLogin.php';
 
->>>>>>> Stashed changes
 
 class Confirm
     {
