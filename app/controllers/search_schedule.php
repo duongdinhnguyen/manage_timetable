@@ -32,6 +32,8 @@ error_reporting(0);
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$schedule_id = test_input($_POST["remove-schedule"]);
+			$lesson_file = test_input($_POST["lesson"]);
+			$note_file = test_input($_POST["note"]);
 			if(isset($_REQUEST['change-schedule'])){
 				$_SESSION['data-schedule-update'] =$_REQUEST['change-schedule'];// gán id schedule cần thay đổi
 				header('location:'.URLROOT.'/?router=search-schedule-change');
@@ -40,6 +42,8 @@ error_reporting(0);
 		if($schedule_id != ''){
 			$sql = "delete from schedules where id = ".$schedule_id;
 			$DB->__conn->query($sql);
+			unlink("./web/file/lesson/".$lesson_file);
+			unlink("./web/file/note/".$note_file);
 		}
 		$sql = "Select * From schedules ";
 

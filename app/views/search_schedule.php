@@ -93,10 +93,22 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 						echo "<td>"; echo$subjects[$row["subject_id"]-1][1]; echo"</td>";
 						echo "<td>"; echo$teachers[$row["teacher_id"]-1][1]; echo"</td>";
 						echo "<td>"; echo$row["week_day"]; echo"</td>";
-						echo "<td>"; echo$row["lesson"]; echo"</td>";
+						echo "<td>"; 
+						
+						$txt_file = fopen("./web/file/lesson/".$row["lesson"],'r');
+						while ($line = fgets($txt_file)) {
+						 echo($line." ");
+						}
+						fclose($txt_file);
+						
+						
+						
+						echo"</td>";
 						echo"<td>";
 						echo"<form method='post' action='?router=search-schedule'>";
 						echo'<button class="btn-submit btn-remove" type="submit" name="remove-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
+						echo'<input name="lesson" value="';echo $row['lesson'];echo '" type="hidden"></input>';
+						echo'<input name="note" value="';echo $row['notes'];echo '" type="hidden"></input>';
 						echo'<button class="btn-submit btn-change" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</a>";
 						echo"</form>";
 						echo"</td>";
