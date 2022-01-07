@@ -4,7 +4,7 @@ class SearchSubject{
     public function __construct(){
         require_once './app/models/subject.php';
         $_SESSION['search-notification']='';
-        $_SESSION['dataSearch'] = $Subject->searchAllSubject();
+        $_SESSION['dataSearch'] = '';
         // xóa và refesh lại trang
         if(isset($_REQUEST['remove-subject'])){
             $Subject->removeSubject($_REQUEST['remove-subject']);
@@ -49,7 +49,7 @@ class SearchSubject{
         }
         // Nếu nhấn vào button tìm kiếm
         else if(isset($_REQUEST['search-subject'])){
-            $_SESSION['key-search']= '';
+            //$_SESSION['key-search']= '';
             if(empty($_REQUEST['khoa-hoc']) && empty(trim($_REQUEST['keyword']))){
                 $_SESSION['search-notification']='Điền ít nhất 1 trường để tìm kiếm';
 
