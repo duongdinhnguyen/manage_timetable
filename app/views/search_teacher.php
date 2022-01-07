@@ -62,7 +62,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 					?>
 						<p class="message-error">
 							<?php
-								if($_SESSION['search-notification-tc']==0){
+								if($_SESSION['search-notification-tc']==' '){
 									echo "Không tìm thấy giáo viên"; 
 								}
 								else echo $_SESSION['search-notification-tc']; 
