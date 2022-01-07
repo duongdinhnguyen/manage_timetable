@@ -84,8 +84,8 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                                     <td ><?php echo $row['description']; ?></td>
 
                                     <td>
-                                    <button type="submit" name="remove-subject" class="btn-update-remove" onclick="return confirm('Bạn chắc chắn muốn xóa phòng học  <?php echo $row['name'] ?>' );" value = "<?php echo $row['id'];?>">Xóa</button>
-                                    <button type="submit" name="change-subject" class="btn-update-remove" value = "<?php echo $row['id'];?>">Sửa</button>
+                                    <button type="submit" name="remove-subject" class="btn-submit btn-remove" onclick="return confirm('Bạn chắc chắn muốn xóa phòng học  <?php echo $row['name'] ?>' );" value = "<?php echo $row['id'];?>">Xóa</button>
+                                    <button type="submit" name="change-subject" class="btn-submit btn-change" value = "<?php echo $row['id'];?>">Sửa</button>
                                     </td>
                                 </tr>
                               

@@ -96,8 +96,8 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 						echo "<td>"; echo$row["lesson"]; echo"</td>";
 						echo"<td>";
 						echo"<form method='post' action='?router=search-schedule'>";
-						echo'<button class="btn-submit" type="submit" name="remove-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
-						echo'<button class="btn-submit" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</a>";
+						echo'<button class="btn-submit btn-remove" type="submit" name="remove-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn xóa?");\' value = ';echo $row['id'];echo">Xóa</button>";
+						echo'<button class="btn-submit btn-change" type="submit" name="change-schedule" onclick=\'javascript: return confirm("Bạn chắc chắn muốn sửa?");\' value = ';echo $row['id'];echo">Sửa</a>";
 						echo"</form>";
 						echo"</td>";
 					echo "</tr>";
