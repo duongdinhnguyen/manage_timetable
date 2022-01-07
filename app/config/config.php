@@ -8,7 +8,7 @@
 define('APPROOT',dirname(dirname(__FILE__)));
 
 // define('URLROOT','http://localhost:8080/manage_timetable');
-define('URLROOT','http://' . $_SERVER['HTTP_HOST'].'/hus-web/FinalPrj/manage_timetable');
+define('URLROOT','http://' . $_SERVER['HTTP_HOST'].'/manage_timetable');
 
 define('IMAGE', URLROOT.'/web/img');
 define('AVATA1', URLROOT.'/web/avatar/');
