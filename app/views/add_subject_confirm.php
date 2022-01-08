@@ -15,7 +15,7 @@ $data = $_SESSION['data'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./web/css/base.css">
-    <link rel="stylesheet" href="./web/css/mystyle.css">
+    <link rel="stylesheet" href="./web/css/subject.css">
     <title>Document</title>
 </head>
 <body>
@@ -25,15 +25,15 @@ $data = $_SESSION['data'];
             <div class="from-from">
                 <div class="from-from__group">
                     <span class="from-from__label">mon hoc</span>
-                    <span class="from-from__input"><?php echo $data['name'] ?></span>
+                    <span><?php echo $data['name'] ?></span>
                 </div>
                 <div class="from-from__group">
                     <span class="from-from__label">khoa</span>
-                    <span class="from-from__input"><?php echo $data['nam'][$data['khoa']] ?></span>
+                    <span><?php echo $data['nam'][$data['khoa']] ?></span>
                 </div>
                 <div class="from-from__group">
                     <span class="from-from__label">Mo ta chi tiet</span>
-                    <span class="from-from__input"><?php  echo $data['mota'] ?></span>
+                    <span><?php  echo $data['mota'] ?></span>
                     
                 </div>
         

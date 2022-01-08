@@ -62,7 +62,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="./web/css/base.css">
-    <link rel="stylesheet" href="./web/css/mystyle.css">
+    <link rel="stylesheet" href="./web/css/subject.css">
     <title>Document</title>
 </head>
 <body>
