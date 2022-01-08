@@ -9,7 +9,11 @@ class Confirm
         {
         
             
-            $this->add_confirm();
+            if(isset($_SESSION['data']['id'])){
+                $this->edit_confirm();
+            }else{
+                $this->add_confirm();
+            }
         }
 
         public function add_confirm(){ 
@@ -67,6 +71,27 @@ class Confirm
                 header("location:".URLROOT."/?router=add-teacher-edit");
             }else{
                 
+                require_once './app/views/add_teacher_confirm.php';
+
+            }
+
+        }
+
+        public function edit_confirm(){ 
+            $data = $_SESSION['data'];
+            if (isset($_POST['btn_submit'])) {
+            
+                require_once './app/models/teacher.php';
+                $result = $Teacher->updateTeacher($data);
+                if ($result) {  
+                    $_SESSION['Msg-add-teacher'] = 'Bạn đã sửa thành công';
+                    header("location:".URLROOT."/?router=add-teacher-complete");
+                }
+            }else if (isset($_POST['btn_edit'])) {
+                header("location:".URLROOT."/?router=add-teacher-edit");
+            }else{
+                // $this->view('add_confirm',$data);
+                // require_once './app/views/add_subject_confirm.php';
                 require_once './app/views/add_teacher_confirm.php';
 
             }
