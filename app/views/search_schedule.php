@@ -56,7 +56,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
 				</div>
 				
 				<div class="element">
-				<label>Môn học</label>
+				<label>Giáo viên</label>
 				<select class="select-element" name="teacher_id" id="teacher_id">
 					<option hidden value="" selected="selected"> </option>
 					<?php
