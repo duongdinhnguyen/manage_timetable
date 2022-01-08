@@ -36,6 +36,24 @@ class Edit
             ];
             $path = AVATA.'tmp/'.$data['avata'];
             $directory=AVATA.'tmp/';
+
+            if (empty($data['name'])){
+                $data['name'] = $sub['name'];
+            }else{
+                if (strlen($data['name']) > 100){
+                    $data['name'] = $sub['name'];
+                }
+            }
+            if (empty($data['khoa'])){
+                $data['khoa'] = $sub['khoa'];
+            }
+            if (empty($data['mota'])) {
+                $data['mota'] = $sub['mota'];
+            }else {
+                if (strlen($data['mota']) > 100){
+                    $data['mota'] = $sub['mota'];
+                }
+            }
             
             if ($data['avata']){
                 if ($data['type']=="image/jpg" || $data['type']=="image/jpeg" || $data['type']=="image/png"){
@@ -143,6 +161,24 @@ class Edit
             ];
             $path = AVATA.'subjects/'.$data['id'].'/'.$data['avata'];
             $directory=AVATA.'subjects/'.$data['id'].'/';
+            
+            if (empty($data['name'])){
+                $data['name'] = $sub['name'];
+            }else{
+                if (strlen($data['name']) > 100){
+                    $data['name'] = $sub['name'];
+                }
+            }
+            if (empty($data['khoa'])){
+                $data['khoa'] = $sub['khoa'];
+            }
+            if (empty($data['mota'])) {
+                $data['mota'] = $sub['mota'];
+            }else {
+                if (strlen($data['mota']) > 100){
+                    $data['mota'] = $sub['mota'];
+                }
+            }
             
             if ($data['avata']){
                 if ($data['type']=="image/jpg" || $data['type']=="image/jpeg" || $data['type']=="image/png"){
