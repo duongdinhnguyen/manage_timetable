@@ -128,6 +128,7 @@ class Edit
             // Process form
             $data = [
             'id' => $id,
+            'nam' => $_SESSION['data']['nam'],
             'name' => $_POST['txt_mon'],
             'khoa' => $_POST['txt_khoa'],
             'mota' => $_POST['txt_mota'],
@@ -164,21 +165,27 @@ class Edit
                 }
             }
             else{
-                $data['avata'] = $sub->avata;
+                $data['avata'] = $sub['avata'];
             }
             // $data['avata'] = $sub->avata;
             
             if(empty( $data['avata_err'])) {
-                require_once './app/models/subject.php';
-                $result = $Subject->updateSubject($data);
-                if ($result) {  
-                    $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
-                    header("location:".URLROOT."/?router=add-subject-complete");
-                }
-            }
+                $_SESSION['data'] = $data;
+                header("location:".URLROOT."/?router=add-subject-confirm");
+            //     require_once './app/models/subject.php';
+            //     $result = $Subject->updateSubject($data);
+            //     if ($result) {  
+            //         $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
+            //         header("location:".URLROOT."/?router=add-subject-complete");
+            //     }
+             }
 
         } else if (isset($_POST['cancel'])) {
-            header("location:".URLROOT."/?router=search-subject");
+            if($_REQUEST['change-subject']){
+                header("location:".URLROOT."/?router=search-subject");
+            }else{
+                header("location:".URLROOT."/?router=add-subject-confirm");
+            }
         } else{
             require_once './app/views/add_subject.php';
         }
