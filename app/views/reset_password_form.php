@@ -11,31 +11,58 @@
 <body>
     <div class="timetable">
         <form action="" class="form" method="POST">
-            <div class="main">
-                <div class="element">
-                    <b style="min-width:120px;text-align:center;">Tài khoản</b>
-                    <b style="min-width:120px;text-align:center;">Mật khẩu mới</b>
-                    <b style="min-width:120px;text-align:center;">Reset Password Token</b>
-                    <b style="min-width:120px;text-align:center;">Action</label>
-                </div>
-                <div class="element">
-                    <p><?php echo $_SESSION['reset'];?></p>
-                    <input type="text" name="new-password" class="input-element" style="width:100px;">
-                    <input type="text" name="token-password" class="input-element" style="width:100px;">
-                    <button type="submit" class="btn-submit" name="action-reset">Reset</button>
-                </div>
-                <div class="element">
-                    <p class="message-error"><?php 
-                    $result = isset($_SESSION['new-password']) ? $_SESSION['new-password']: '';
-                        echo $result; 
-                    
-                    ?></p>
-                </div>
-                <div class="element">
-                    <!-- <a href="http://localhost/manage_timetable/">Quay lại trang login</a> -->
-                    <a href="<?= URLROOT ?>/">Quay lại trang đăng nhập</a>
-                </div>
-            </div>
+            <?php
+             
+                $result = $Admin->alladmins();
+            ?>
+        <table class="tbl" >
+                <tr>
+                    <th style="width: 40px"> No</th>
+                    <th> Tên người dùng</th>
+                    <th class="centerth"> Mật khẩu mới</th>
+                    <th class="centerth"> Action </th>
+                </tr>
+                <tr>
+                <?php
+                        $count = 1;
+                        foreach ($result as $row){  
+                            
+                ?>
+                        <td><?php echo $count; ?></td>
+                        <td><?php echo $row['login_id'];?></td>
+                        <td><input type="text" name="newpassword<?php echo $count;?>" style="cursor:pointer" class="newpass"></td>
+                        <td>
+                            <button type="submit" name="action-reset<?php echo $count;?>" value="<?php echo $row['login_id'];?>" style="cursor:pointer"  class="action-reset">Reset</button>
+                            </td>
+                        
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div>
+                        <span class="error"><?php 
+                        if(isset($_SESSION['new-password'.$count])){
+                            $result = $_SESSION['new-password'.$count];
+                            echo $result;
+                            $_SESSION['new-password'.$count] = "";
+                        } ?>
+                        </span></div>
+                        </td>
+                    <td></td>
+                </tr>
+                <?php
+                       
+                        $count++; 
+                        }
+                        $_SESSION['count'] = $count;
+                        
+                ?>
+               
+            </table>
+           <div class="element">
+               <a href="?">Trở về đăng nhập</a>
+           </div>
         </form>
     </div>
 </body>

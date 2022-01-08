@@ -48,6 +48,9 @@
                 <div class="element">
                     <a href="?">Đăng xuất</a>
                 </div>
+                <div class="element">
+                    <a href="?router=reset-password-form">Reset password</a>
+                </div>
             </div>
         </div>
     </div>

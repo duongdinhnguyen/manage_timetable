@@ -169,3 +169,16 @@ td, th {
     border:1px solid blue;
     background-color: rgb(147, 183, 212);
 }
+
+.inputClean{
+    width: 1px;
+    height: 1px;
+    padding: 1px;
+    margin: 1px;
+    border: 1px solid white;
+}
+
+.error {
+    /* margin: 10px; */
+    color: #FF3C33;
+}
