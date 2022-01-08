@@ -61,7 +61,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                     	$result  = $_SESSION['search-notification-tc'];
                         if($result == -1){
                     ?>
-                            <p class="message-error"><?php echo "Không tìm thấy môn học nào"; ?></p>
+                            <p class="message-error"><?php echo "Không tìm thấy giáo viên nào"; ?></p>
                     <?php   
                         }
                         else if(intval($result)==0){
