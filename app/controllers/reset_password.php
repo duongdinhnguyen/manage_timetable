@@ -19,8 +19,10 @@ class ResetPassword{
                 }
                 else{
                     $_SESSION['reset'] = $_REQUEST['reset-input'];
-                    
-                    header('location:'.URLROOT.'/?router=reset-password-form');
+                    $micro = microtime(true);
+                    $Admin->updateToken($_REQUEST['reset-input'], $micro);
+                    header('location:?');
+                    // header('location:'.URLROOT.'/?router=reset-password-form');
                     // header("location:http://localhost/manage_timetable/?router=reset-password-form");
                 }
             }

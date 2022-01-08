@@ -80,43 +80,43 @@ if(!isset($_SESSION['login']) || $_SESSION['login']==''){
                     <ul id="list_lesson">
                         <li class="item_lesson">
                             <input id="tiet-hoc-1" type="checkbox" name="tiethoc[]" value="1" <?php if(in_array("1",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-1">Tiết 1</label>
+                            <p>Tiết 1</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-2" type="checkbox" name="tiethoc[]" value="2" <?php if(in_array("2",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-2">Tiết 2</label>
+                            <p>Tiết 2</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-3" type="checkbox" name="tiethoc[]" value="3" <?php if(in_array("3",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-3">Tiết 3</label>
+                            <p>Tiết 3</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-4" type="checkbox" name="tiethoc[]" value="4" <?php if(in_array("4",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-4">Tiết 4</label>
+                            <p>Tiết 4</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-5" type="checkbox" name="tiethoc[]" value="5" <?php if(in_array("5",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-5">Tiết 5</label>
+                            <p>Tiết 5</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-6" type="checkbox" name="tiethoc[]" value="6" <?php if(in_array("6",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-6">Tiết 6</label>
+                            <p>Tiết 6</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-7" type="checkbox" name="tiethoc[]" value="7" <?php if(in_array("7",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-7">Tiết 7</label>
+                            <p>Tiết 7</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-8" type="checkbox" name="tiethoc[]" value="8" <?php if(in_array("8",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-8">Tiết 8</label>
+                            <p>Tiết 8</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-9" type="checkbox" name="tiethoc[]" value="9" <?php if(in_array("9",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-9">Tiết 9</label>
+                            <p>Tiết 9</p>
                         </li>
                         <li class="item_lesson">
                             <input id="tiet-hoc-10" type="checkbox" name="tiethoc[]" value="10" <?php if(in_array("10",$dataCreateSchedule[4])){ echo "checked";} ?> >
-                            <label for="tiet-hoc-10">Tiết 10</label>
+                            <p>Tiết 10</p>
                         </li>
                     </ul>
                 </div>

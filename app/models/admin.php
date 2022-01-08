@@ -22,7 +22,31 @@ class Admin extends DB{
         $this->__conn->exec($sql);
         
     }
+    // update new password 2
+    public function updatePassword2($id, $newPassword){
+        
+        $newPassword = md5($newPassword);
+        $sql="UPDATE `admins` SET `password`='$newPassword', `reset_password_token` ='' WHERE login_id='$id'";
+        return $this->__conn->query($sql);
+        
+    }
     
+    //Xử lý yêu cầu thay đổi mật khẩu
+    public function updateToken($id, $micro){
+        $sql = "UPDATE `admins` SET `reset_password_token`='$micro' WHERE login_id = '$id'";
+        return $this->__conn->query($sql);
+
+    }
+
+    //Lấy ra các giá trị đang yêu cầu đổi mật khẩu
+    public function alladmins(){
+        
+        $sql = "SELECT * FROM `admins` WHERE reset_password_token <> ''";
+        
+        $result = $this->__conn->query($sql);
+
+        return $result;
+    }
 }
 
 $Admin = new Admin();
