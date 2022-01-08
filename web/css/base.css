@@ -71,7 +71,7 @@ html{
     color: red;
     transition: 0.25s;
 }
-.element button: hover{
+.element button:hover{
     transition: 0.25s;
 }
 .select-element,
