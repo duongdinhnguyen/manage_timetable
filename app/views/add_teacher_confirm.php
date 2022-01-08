@@ -41,7 +41,17 @@ $data = $_SESSION['data'];
                     
                     <div class="from-from__group-image">
                     <!-- <img src="upload/tmp/" height="100" width="100" alt=""> -->
-                    <img src="<?= AVATA1 ?>tmp/<?php echo $data['avata'] ?>" height="100" width="100" alt="">
+                    <?php 
+                            if(isset($data['id'])){
+                        ?>
+                                <img src="<?= AVATA1 ?>teachers/<?= $data['id'] ?>/<?php echo $data['avata'] ?>" height="100" width="100" alt="">   
+                        <?php
+                            }else{
+                        ?>
+                                <img src="<?= AVATA1 ?>tmp/<?php echo $data['avata'] ?>" height="100" width="100" alt="">
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
 

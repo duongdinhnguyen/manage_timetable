@@ -161,25 +161,25 @@ class Edit
             ];
             $path = AVATA.'subjects/'.$data['id'].'/'.$data['avata'];
             $directory=AVATA.'subjects/'.$data['id'].'/';
-            
+
             if (empty($data['name'])){
-                $data['name'] = $sub['name'];
+                    $data['name_err'] = "hãy nhập tên môn học";
             }else{
                 if (strlen($data['name']) > 100){
-                    $data['name'] = $sub['name'];
+                    $data['name_err'] = "không nhập quá 100 kí tự";
                 }
             }
             if (empty($data['khoa'])){
-                $data['khoa'] = $sub['khoa'];
+                $data['khoa_err'] = "hãy chọn khóa học";
             }
             if (empty($data['mota'])) {
-                $data['mota'] = $sub['mota'];
+                $data['mota_err'] = "hãy nhập mô tả chi tiết";
             }else {
                 if (strlen($data['mota']) > 100){
-                    $data['mota'] = $sub['mota'];
+                    $data['mota_err'] = "không nhập quá 1000 kí tự";
                 }
             }
-            
+        
             if ($data['avata']){
                 if ($data['type']=="image/jpg" || $data['type']=="image/jpeg" || $data['type']=="image/png"){
                     if(!file_exists($path)){
@@ -205,7 +205,7 @@ class Edit
             }
             // $data['avata'] = $sub->avata;
             
-            if(empty( $data['avata_err'])) {
+            if(empty( $data['name_err']) && empty( $data['khoa_err']) && empty( $data['mota_err']) && empty( $data['avata_err'])) {
                 $_SESSION['data'] = $data;
                 header("location:".URLROOT."/?router=add-subject-confirm");
             //     require_once './app/models/subject.php';
@@ -214,6 +214,9 @@ class Edit
             //         $_SESSION['Msg-add-subject'] = 'Bạn đã sửa thành công';
             //         header("location:".URLROOT."/?router=add-subject-complete");
             //     }
+             }else{
+                $_SESSION['data'] = $data;
+                header("location:".URLROOT."/?router=add-subject-edit");
              }
 
         } else if (isset($_POST['cancel'])) {

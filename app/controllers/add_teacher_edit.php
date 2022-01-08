@@ -132,6 +132,8 @@ class Edit
             // Process form
             $data = [
             'id' => $id,
+            'specializes' => $sub['specializes'],
+            'degrees' => $sub['degrees'],
             'name' => $_POST['txt_name'],
             'specialized' => $_POST['txt_specialized'],
             'degree' => $_POST['txt_degree'],
@@ -175,16 +177,18 @@ class Edit
             // $data['avata'] = $sub->avata;
             
             if(empty( $data['avata_err'])) {
-                require_once './app/models/teacher.php';
-                $result = $Teacher->updateTeacher($data);
-                if ($result) {  
-                    $_SESSION['Msg-add-teacher'] = 'Bạn đã sửa thành công';
-                    header("location:".URLROOT."/?router=add-teacher-complete");
-                }
+                // require_once './app/models/teacher.php';
+                // $result = $Teacher->updateTeacher($data);
+                // if ($result) {  
+                //     $_SESSION['Msg-add-teacher'] = 'Bạn đã sửa thành công';
+                //     header("location:".URLROOT."/?router=add-teacher-confirm");
+                // }
+                $_SESSION['data'] = $data;
+                header("location:".URLROOT."/?router=add-teacher-confirm");
             }
 
         } else if (isset($_POST['cancel'])) {
-            header("location:".URLROOT."/?router=search-teacher");
+            header("location:".URLROOT."/?router=add-teacher-confirm");
         } else{
             require_once './app/views/add_teacher.php';
         }
