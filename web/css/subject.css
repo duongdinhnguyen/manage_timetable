@@ -139,7 +139,7 @@
     background: #eee;
     border: 1px solid black;
     text-align: center;
-
+    line-height: 24px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
