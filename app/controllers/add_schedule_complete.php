@@ -7,7 +7,9 @@ class AddScheduleComplete{
 
         $_SESSION['add-schedule-complete-notifi'] = "";
         $data = isset($_SESSION['add-schedule-data']) ? $_SESSION['add-schedule-data'] : [];
-        $_SESSION['add-schedule-data'] =['','','','',[],''];
+        //$_SESSION['add-schedule-data'] =['','','','',[],''];
+        unset($_SESSION['add-schedule-data']);
+
         // Sau khi lấy data để xử lý insert vào database thì trả 
         //$_SESSION['add-schedule-data'] = trống để ko hiển thị lại datainput khi vào lại screen add-schedule sau khi insert xong
         

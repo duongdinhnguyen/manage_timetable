@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 04, 2022 lúc 05:15 AM
+-- Thời gian đã tạo: Th1 08, 2022 lúc 06:39 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -42,8 +42,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `reset_password_token`, `updated`, `created`) VALUES
-(1, '1234', 'e10adc3949ba59abbe56e057f20f883e', 1, 'duonqdinhnquyen', '2022-01-01 10:29:28', '2021-12-30 12:30:43'),
-(2, 'duonq', 'e10adc3949ba59abbe56e057f20f883e', 1, '', '2021-12-31 10:11:01', '2021-12-31 10:11:01'),
+(1, '1234', 'e10adc3949ba59abbe56e057f20f883e', 1, '', '2022-01-08 20:05:08', '2021-12-30 12:30:43'),
+(2, 'duonq', 'e10adc3949ba59abbe56e057f20f883e', 1, '', '2022-01-08 15:30:18', '2021-12-31 10:11:01'),
 (3, 'duonqdinhnquyen', '29672f6663473703e7f34877e82be388', 1, '123456', '2021-12-31 12:20:17', '2021-12-31 12:20:17');
 
 -- --------------------------------------------------------
@@ -69,16 +69,18 @@ CREATE TABLE `schedules` (
 --
 
 INSERT INTO `schedules` (`id`, `school_year`, `subject_id`, `teacher_id`, `week_day`, `lesson`, `notes`, `updated`, `created`) VALUES
-(11, '2', 1, 2, 'Thứ 4', 'l15361.txt', 'n3882.txt', '2022-01-03 17:05:28', '2022-01-02 17:57:37'),
-(12, '2', 1, 2, 'Thứ 3', 'l61645.txt', 'n92059.txt', '2022-01-03 17:05:28', '2022-01-02 18:28:57'),
-(13, '1', 3, 1, 'Thứ 6', 'l80396.txt', 'n70688.txt', '2022-01-03 17:05:28', '2022-01-02 18:29:27'),
-(14, '3', 2, 2, 'Thứ 7', 'l16749.txt', 'n86285.txt', '2022-01-03 17:05:28', '2022-01-02 18:29:48'),
-(15, '2', 3, 3, 'Chủ nhật', 'l96126.txt', 'n18370.txt', '2022-01-03 17:05:00', '2022-01-02 18:30:22'),
-(16, '4', 1, 1, 'Thứ 3', 'l41256.txt', 'n7118.txt', '2022-01-03 17:03:40', '2022-01-02 18:30:50'),
-(17, '2', 3, 2, 'Thứ 4', 'l82776.txt', 'n97517.txt', '2022-01-03 17:03:32', '2022-01-02 18:31:41'),
-(18, '2', 1, 2, 'Thứ 3', 'l36304.txt', 'n94328.txt', '2022-01-03 17:00:28', '2022-01-03 17:00:28'),
-(19, '2', 1, 2, 'Thứ 3', 'l99391.txt', 'n90646.txt', '2022-01-03 17:02:36', '2022-01-03 17:02:36'),
-(20, '2', 2, 1, 'Thứ 3', 'l90539.txt', 'n53046.txt', '2022-01-03 18:06:17', '2022-01-03 18:06:17');
+(28, '2', 2, 2, 'Thứ 2', 'l19249.txt', 'n78036.txt', '2022-01-06 12:57:06', '2022-01-06 12:57:06'),
+(29, '1', 13, 4, 'Thứ 2', 'l44517.txt', 'n7850.txt', '2022-01-08 15:34:45', '2022-01-07 07:49:40'),
+(30, '2', 12, 6, 'Thứ 5', 'l10158.txt', 'n1883.txt', '2022-01-07 19:02:42', '2022-01-07 18:14:35'),
+(31, '2', 13, 4, 'Chủ nhật', 'l80413.txt', 'n32856.txt', '2022-01-08 08:11:13', '2022-01-07 19:45:22'),
+(32, '3', 15, 7, 'Chủ nhật', 'l2394.txt', 'n37951.txt', '2022-01-08 21:20:21', '2022-01-08 21:20:21'),
+(34, '1', 16, 8, 'Chủ nhật', 'l75404.txt', 'n50940.txt', '2022-01-08 21:43:10', '2022-01-08 21:43:10'),
+(35, '1', 16, 8, 'Chủ nhật', 'l80811.txt', 'n80730.txt', '2022-01-08 21:52:33', '2022-01-08 21:52:33'),
+(36, '1', 16, 8, 'Chủ nhật', 'l69314.txt', 'n76502.txt', '2022-01-08 22:18:38', '2022-01-08 22:18:38'),
+(37, '2', 17, 10, 'Chủ nhật', 'l36695.txt', 'n6661.txt', '2022-01-09 00:37:00', '2022-01-09 00:37:00'),
+(38, '4', 21, 14, 'Thứ 6', 'l80025.txt', 'n83219.txt', '2022-01-09 00:37:24', '2022-01-09 00:37:24'),
+(39, '3', 19, 9, 'Thứ 7', 'l55390.txt', 'n97644.txt', '2022-01-09 00:37:53', '2022-01-09 00:37:53'),
+(40, '2', 17, 11, 'Thứ 4', 'l18755.txt', 'n50512.txt', '2022-01-09 00:38:28', '2022-01-09 00:38:28');
 
 -- --------------------------------------------------------
 
@@ -101,13 +103,12 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `name`, `avatar`, `description`, `school_year`, `updated`, `created`) VALUES
-(1, 'Toán lớp 10', 'sach-giao-khoa-dai-so-lop-10.jpg', 'Toán 10 gồm: Đại số và Giải tích', '3', '2022-01-03 17:06:02', '2022-01-01 12:05:43'),
-(2, 'Toán lớp 18', 'sach-giao-khoa-toan-8.jpg', 'Toán 8 gồm: Đại số và Giải tích', '1', '2022-01-03 17:06:02', '2022-01-01 12:05:43'),
-(3, 'Toán lớp 9', 'sach-giao-khoa-toan-lop-9.jpg', 'Nội dung chương trình Toán lớp 9 bao gồm hai phần: Đại số và Hình học và chia thành 8 chủ đề', '2', '2022-01-03 17:06:02', '2021-12-31 13:35:31'),
-(4, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đay là môn đại sô tuyến tính', '1', '2022-01-03 16:44:25', '2022-01-03 16:01:25'),
-(5, 'Đại số tuyến tính', 'sach-giao-khoa-toan-lop-9.jpg', 'dd', '1', '2022-01-03 17:28:25', '2022-01-03 17:01:25'),
-(6, 'Đại số tuyến tính', 'sach-giao-khoa-dai-so-lop-10.jpg', 'đây là môn đại số tuyến tính', '2021', '2022-01-03 17:41:12', '2022-01-03 17:01:12'),
-(7, 'Toán 9', 'sach-giao-khoa-toan-lop-9.jpg', 'đây là toán lớp 9', '2020', '2022-01-04 09:26:14', '2022-01-04 09:01:14');
+(16, 'Đại số tuyến tính', 'dai-so-tuyen-tinh-0-855.jpg', 'đây là môn đại số tuyến tính', '3', '2022-01-08 21:30:10', '2022-01-08 21:01:10'),
+(17, 'Toán rời rạc', '2013-11-26-02-50-31_Giao-trinh-Toan-roi-rac-Lon.jpg', 'đây là môn Toán rời rạc', '3', '2022-01-08 21:30:43', '2022-01-08 21:01:43'),
+(18, 'Giải tích 1', '2013-09-09-12-49-53_GIAI-TICH-1-large.jpg', 'Đây là môn tối ưu hóa', '3', '2022-01-08 21:31:32', '2022-01-08 21:01:32'),
+(19, 'Giải tích 2', 'giao-trinh-giai-tich-2-0-367.jpg', 'môn học giáo trính giải tích 2', '2', '2022-01-09 00:35:14', '2022-01-09 00:01:14'),
+(20, 'Xác suất thống kê', 'bai-tap-xac-suat-thong-ke-0-182.jpg', 'xác suất và thống kê', '4', '2022-01-09 00:35:44', '2022-01-09 00:01:44'),
+(21, 'Trí tuệ nhân tạo', 'product_5b_0f_b9_87dd2fe1c7bf07fbcc14a7d270752510.jpg', 'AI', '4', '2022-01-09 00:36:14', '2022-01-09 00:01:14');
 
 -- --------------------------------------------------------
 
@@ -131,9 +132,13 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `degree`, `updated`, `created`) VALUES
-(1, 'Thầy giáo A', 'kisspng-teacher-school-cartoon-teacher-picture-5a7c0acc557e82.3205671315180786683502.jpg', 'Người thầy tận tâm', 'Khoa hoc m', 'Pho giao s', '2022-01-01 12:34:47', '2022-01-01 12:34:47'),
-(2, 'Thầy giáo B', 'png-clipart-teacher-job-cartoon-education-professor-teacher-class-fictional-character.png', 'Người thầy tận tâm', 'Khoa hoc d', 'Giao su', '2022-01-01 12:34:47', '2022-01-01 12:34:47'),
-(3, 'Thầy giáo C', 'pngtree-illustrator-of-the-beginning-of-the-school-quarter-png-image_4533769.jpg', 'Người thầy tận tâm', 'Hai duong', 'Tien si', '2022-01-01 12:34:47', '2022-01-01 12:34:47');
+(8, 'Giảng viên A', '5d9b24dec11c65802139bb2fafcfe6e3.png_wh860.png', 'giảng viên A', '1', '4', '2022-01-08 21:28:25', '2022-01-08 21:01:25'),
+(9, 'Giảng viên B', 'kisspng-portable-network-graphics-teacher-clip-art-educati-5cb984ac001b33.1188784615556619960004.jpg', 'giảng viên B', '3', '4', '2022-01-08 21:28:48', '2022-01-08 21:01:48'),
+(10, 'Giảng viên C', 'pngtree-illustrator-of-the-beginning-of-the-school-quarter-png-image_4533769.jpg', 'Giảng viên C', '2', '2', '2022-01-08 21:29:25', '2022-01-08 21:01:25'),
+(11, 'Giảng viên D', 'vector-illustration-cartoon-scientist-29889031.jpg', 'Giảng viên D', '2', '3', '2022-01-09 00:28:59', '2022-01-09 00:01:59'),
+(12, 'Giảng viên E', 'kisspng-portable-network-graphics-teacher-clip-art-educati-5cb984ac001b33.1188784615556619960004.jpg', 'Giảng viên E', '2', '3', '2022-01-09 00:29:31', '2022-01-09 00:01:31'),
+(13, 'Giảng viên F', 'f48af786eafdefe141347866f2b12352.png_wh860.png', 'đây là giảng viên F', '3', '5', '2022-01-09 00:29:53', '2022-01-09 00:01:53'),
+(14, 'Giảng viên G', '5d9b24dec11c65802139bb2fafcfe6e3.png_wh860.png', 'Giảng viên khoa Toán', '2', '3', '2022-01-09 00:34:30', '2022-01-09 00:01:30');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -178,19 +183,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT cho bảng `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
